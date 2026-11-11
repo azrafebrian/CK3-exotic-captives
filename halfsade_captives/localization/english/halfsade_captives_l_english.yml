@@ -1,0 +1,25 @@
+﻿l_english:
+ halfsade_captives_summon_decision:0 "Receive Exotic Captives"
+ halfsade_captives_summon_decision_tooltip:0 "Merchants bring strangers from far-away lands before your [court|E]. You may keep them all, keep one, or send them home."
+ halfsade_captives_summon_decision_desc:0 "Shady merchants from the borderlands have approached my court with a secret offer. They have brought a bound captive from a distant [culture|E], and they are eager to sell this unique outsider to me for the right price."
+ halfsade_captives_summon_decision_confirm:0 "Present the Strangers"
+ halfsade_captives_summon_decision_effect:0 "In #V 20 days#!, the merchants will bring strangers to your [court|E], each from a different far-away [culture|E]."
+ 
+ halfsade_captives.0001.toast:0 "The Merchants Prepare the Captives"
+ halfsade_captives.0001.toast_desc:0 "The merchants have heard of your interest in their merchandise. They will return in a few days."
+
+ # --- Event 0002 ---
+ halfsade_captives.0002.t:0 "Strangers from Distant Shores"
+ halfsade_captives.0002.desc:0 "The merchants have returned with the captives, each from a different far-away land. They now stand before your throne, unsure of what awaits them.\n\n#bold [halfsade_captive_1.GetFirstName]#! - [halfsade_captive_1.GetCulture.GetName] [halfsade_captive_1.GetWomanMan], age [halfsade_captive_1.GetAge].\n#bold [halfsade_captive_2.GetFirstName]#! - [halfsade_captive_2.GetCulture.GetName] [halfsade_captive_2.GetWomanMan], age [halfsade_captive_2.GetAge].\n#bold [halfsade_captive_3.GetFirstName]#! - [halfsade_captive_3.GetCulture.GetName] [halfsade_captive_3.GetWomanMan], age [halfsade_captive_3.GetAge].\n\nThe choice of what to do with them is yours."
+ halfsade_captives.0002.a:0 "Welcome all three to my [court|E]"
+ halfsade_captives.0002.b:0 "Keep only [halfsade_captive_1.GetFirstName]"
+ halfsade_captives.0002.c:0 "Keep only [halfsade_captive_2.GetFirstName]"
+ halfsade_captives.0002.d:0 "Keep only [halfsade_captive_3.GetFirstName]"
+ halfsade_captives.0002.e:0 "Send them back to their captivity"
+ halfsade_captives.0002.others_return:0 "The other two are sent back to their captors"
+
+ # --- Modifiers ---
+ halfsade_captives_far_from_home_modifier:0 "Far From Home"
+ halfsade_captives_far_from_home_modifier_desc:0 "Taken to a land very unlike their own, this person longs for home."
+ halfsade_captives_exotic_taste_modifier:0 "Exotic Tastes"
+ halfsade_captives_exotic_taste_modifier_desc:0 "Word has spread that this ruler keeps strangers from distant lands at [court|E], and some find it improper."

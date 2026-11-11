@@ -1,0 +1,203 @@
+﻿halfsade_captives_try_macro_effect = {
+	if = {
+		limit = {
+			NOT = { exists = scope:halfsade_far_ruler_$SLOT$ }
+		}
+		random_ruler = {
+			limit = {
+				halfsade_captives_culture_unused_trigger = yes
+				halfsade_captives_in_macro_$MACRO$_trigger = yes
+			}
+			save_scope_as = halfsade_far_ruler_$SLOT$
+			debug_log = "halfsade_captives: slot $SLOT$ picked from macro $MACRO$"
+		}
+	}
+}
+
+halfsade_captives_try_any_effect = {
+	if = {
+		limit = {
+			NOT = { exists = scope:halfsade_far_ruler_$SLOT$ }
+		}
+		random_ruler = {
+			limit = {
+				halfsade_captives_culture_unused_trigger = yes
+			}
+			save_scope_as = halfsade_far_ruler_$SLOT$
+			debug_log = "halfsade_captives: slot $SLOT$ picked from ANYWHERE (distance rules not applied)"
+		}
+	}
+}
+
+halfsade_captives_pick_far_ruler_effect = {
+	# home: europe   weights: southeast_asia(d6)=50, east_asia(d5)=25, south_asia(d4)=13, central_asia(d3)=5, middle_east(d2)=1, africa(d1)=0
+	if = {
+		limit = { halfsade_captives_in_macro_europe_trigger = yes }
+		debug_log = "halfsade_captives: slot $SLOT$ home macro detected: europe"
+		
+		random_list = {
+			5000 = { halfsade_captives_try_macro_effect = { MACRO = southeast_asia SLOT = $SLOT$ } }
+			2500 = { halfsade_captives_try_macro_effect = { MACRO = east_asia SLOT = $SLOT$ } }
+			1300 = { halfsade_captives_try_macro_effect = { MACRO = south_asia SLOT = $SLOT$ } }
+			500 = { halfsade_captives_try_macro_effect = { MACRO = central_asia SLOT = $SLOT$ } }
+			100 = { halfsade_captives_try_macro_effect = { MACRO = middle_east SLOT = $SLOT$ } }
+		}
+	
+		halfsade_captives_try_macro_effect = { MACRO = southeast_asia SLOT = $SLOT$ }
+		halfsade_captives_try_macro_effect = { MACRO = east_asia SLOT = $SLOT$ }
+		halfsade_captives_try_macro_effect = { MACRO = south_asia SLOT = $SLOT$ }
+		halfsade_captives_try_macro_effect = { MACRO = central_asia SLOT = $SLOT$ }
+		halfsade_captives_try_macro_effect = { MACRO = middle_east SLOT = $SLOT$ }
+		halfsade_captives_try_macro_effect = { MACRO = africa SLOT = $SLOT$ }
+	}
+	# home: africa   weights: southeast_asia(d5)=50, east_asia(d4)=25, south_asia(d3)=13, central_asia(d2)=5, europe(d1)=0.5, middle_east(d1)=0.5
+	else_if = {
+		limit = { halfsade_captives_in_macro_africa_trigger = yes }
+		debug_log = "halfsade_captives: slot $SLOT$ home macro detected: africa"
+		
+		random_list = {
+			5000 = { halfsade_captives_try_macro_effect = { MACRO = southeast_asia SLOT = $SLOT$ } }
+			2500 = { halfsade_captives_try_macro_effect = { MACRO = east_asia SLOT = $SLOT$ } }
+			1300 = { halfsade_captives_try_macro_effect = { MACRO = south_asia SLOT = $SLOT$ } }
+			500 = { halfsade_captives_try_macro_effect = { MACRO = central_asia SLOT = $SLOT$ } }
+			50 = { halfsade_captives_try_macro_effect = { MACRO = europe SLOT = $SLOT$ } }
+			50 = { halfsade_captives_try_macro_effect = { MACRO = middle_east SLOT = $SLOT$ } }
+		}
+		
+		halfsade_captives_try_macro_effect = { MACRO = southeast_asia SLOT = $SLOT$ }
+		halfsade_captives_try_macro_effect = { MACRO = east_asia SLOT = $SLOT$ }
+		halfsade_captives_try_macro_effect = { MACRO = south_asia SLOT = $SLOT$ }
+		halfsade_captives_try_macro_effect = { MACRO = central_asia SLOT = $SLOT$ }
+		halfsade_captives_try_macro_effect = { MACRO = europe SLOT = $SLOT$ }
+		halfsade_captives_try_macro_effect = { MACRO = middle_east SLOT = $SLOT$ }
+	}
+	# home: middle_east   weights: southeast_asia(d4)=50, east_asia(d3)=25, europe(d2)=6.5, south_asia(d2)=6.5, africa(d1)=2.5, central_asia(d1)=2.5
+	else_if = {
+		limit = { halfsade_captives_in_macro_middle_east_trigger = yes }
+		debug_log = "halfsade_captives: slot $SLOT$ home macro detected: middle_east"
+		
+		random_list = {
+			5000 = { halfsade_captives_try_macro_effect = { MACRO = southeast_asia SLOT = $SLOT$ } }
+			2500 = { halfsade_captives_try_macro_effect = { MACRO = east_asia SLOT = $SLOT$ } }
+			650 = { halfsade_captives_try_macro_effect = { MACRO = europe SLOT = $SLOT$ } }
+			650 = { halfsade_captives_try_macro_effect = { MACRO = south_asia SLOT = $SLOT$ } }
+			250 = { halfsade_captives_try_macro_effect = { MACRO = africa SLOT = $SLOT$ } }
+			250 = { halfsade_captives_try_macro_effect = { MACRO = central_asia SLOT = $SLOT$ } }
+		}
+		
+		halfsade_captives_try_macro_effect = { MACRO = southeast_asia SLOT = $SLOT$ }
+		halfsade_captives_try_macro_effect = { MACRO = east_asia SLOT = $SLOT$ }
+		halfsade_captives_try_macro_effect = { MACRO = europe SLOT = $SLOT$ }
+		halfsade_captives_try_macro_effect = { MACRO = south_asia SLOT = $SLOT$ }
+		halfsade_captives_try_macro_effect = { MACRO = africa SLOT = $SLOT$ }
+		halfsade_captives_try_macro_effect = { MACRO = central_asia SLOT = $SLOT$ }
+	}
+	# home: central_asia   weights: europe(d3)=25, southeast_asia(d3)=25, africa(d2)=12.5, east_asia(d2)=12.5, middle_east(d1)=6.5, south_asia(d1)=6.5
+	else_if = {
+		limit = { halfsade_captives_in_macro_central_asia_trigger = yes }
+		debug_log = "halfsade_captives: slot $SLOT$ home macro detected: central_asia"
+		
+		random_list = {
+			2500 = { halfsade_captives_try_macro_effect = { MACRO = europe SLOT = $SLOT$ } }
+			2500 = { halfsade_captives_try_macro_effect = { MACRO = southeast_asia SLOT = $SLOT$ } }
+			1250 = { halfsade_captives_try_macro_effect = { MACRO = africa SLOT = $SLOT$ } }
+			1250 = { halfsade_captives_try_macro_effect = { MACRO = east_asia SLOT = $SLOT$ } }
+			650 = { halfsade_captives_try_macro_effect = { MACRO = middle_east SLOT = $SLOT$ } }
+			650 = { halfsade_captives_try_macro_effect = { MACRO = south_asia SLOT = $SLOT$ } }
+		}
+		
+		halfsade_captives_try_macro_effect = { MACRO = europe SLOT = $SLOT$ }
+		halfsade_captives_try_macro_effect = { MACRO = southeast_asia SLOT = $SLOT$ }
+		halfsade_captives_try_macro_effect = { MACRO = africa SLOT = $SLOT$ }
+		halfsade_captives_try_macro_effect = { MACRO = east_asia SLOT = $SLOT$ }
+		halfsade_captives_try_macro_effect = { MACRO = middle_east SLOT = $SLOT$ }
+		halfsade_captives_try_macro_effect = { MACRO = south_asia SLOT = $SLOT$ }
+	}
+	# home: south_asia   weights: europe(d4)=50, africa(d3)=25, middle_east(d2)=6.5, southeast_asia(d2)=6.5, central_asia(d1)=2.5, east_asia(d1)=2.5
+	else_if = {
+		limit = { halfsade_captives_in_macro_south_asia_trigger = yes }
+		debug_log = "halfsade_captives: slot $SLOT$ home macro detected: south_asia"
+		
+		random_list = {
+			5000 = { halfsade_captives_try_macro_effect = { MACRO = europe SLOT = $SLOT$ } }
+			2500 = { halfsade_captives_try_macro_effect = { MACRO = africa SLOT = $SLOT$ } }
+			650 = { halfsade_captives_try_macro_effect = { MACRO = middle_east SLOT = $SLOT$ } }
+			650 = { halfsade_captives_try_macro_effect = { MACRO = southeast_asia SLOT = $SLOT$ } }
+			250 = { halfsade_captives_try_macro_effect = { MACRO = central_asia SLOT = $SLOT$ } }
+			250 = { halfsade_captives_try_macro_effect = { MACRO = east_asia SLOT = $SLOT$ } }
+		}
+		
+		halfsade_captives_try_macro_effect = { MACRO = europe SLOT = $SLOT$ }
+		halfsade_captives_try_macro_effect = { MACRO = africa SLOT = $SLOT$ }
+		halfsade_captives_try_macro_effect = { MACRO = middle_east SLOT = $SLOT$ }
+		halfsade_captives_try_macro_effect = { MACRO = southeast_asia SLOT = $SLOT$ }
+		halfsade_captives_try_macro_effect = { MACRO = central_asia SLOT = $SLOT$ }
+		halfsade_captives_try_macro_effect = { MACRO = east_asia SLOT = $SLOT$ }
+	}
+	# home: east_asia   weights: europe(d5)=50, africa(d4)=25, middle_east(d3)=13, central_asia(d2)=5, south_asia(d1)=0.5, southeast_asia(d1)=0.5
+	else_if = {
+		limit = { halfsade_captives_in_macro_east_asia_trigger = yes }
+		debug_log = "halfsade_captives: slot $SLOT$ home macro detected: east_asia"
+		
+		random_list = {
+			5000 = { halfsade_captives_try_macro_effect = { MACRO = europe SLOT = $SLOT$ } }
+			2500 = { halfsade_captives_try_macro_effect = { MACRO = africa SLOT = $SLOT$ } }
+			1300 = { halfsade_captives_try_macro_effect = { MACRO = middle_east SLOT = $SLOT$ } }
+			500 = { halfsade_captives_try_macro_effect = { MACRO = central_asia SLOT = $SLOT$ } }
+			50 = { halfsade_captives_try_macro_effect = { MACRO = south_asia SLOT = $SLOT$ } }
+			50 = { halfsade_captives_try_macro_effect = { MACRO = southeast_asia SLOT = $SLOT$ } }
+		}
+		
+		halfsade_captives_try_macro_effect = { MACRO = europe SLOT = $SLOT$ }
+		halfsade_captives_try_macro_effect = { MACRO = africa SLOT = $SLOT$ }
+		halfsade_captives_try_macro_effect = { MACRO = middle_east SLOT = $SLOT$ }
+		halfsade_captives_try_macro_effect = { MACRO = central_asia SLOT = $SLOT$ }
+		halfsade_captives_try_macro_effect = { MACRO = south_asia SLOT = $SLOT$ }
+		halfsade_captives_try_macro_effect = { MACRO = southeast_asia SLOT = $SLOT$ }
+	}
+	# home: southeast_asia   weights: europe(d6)=50, africa(d5)=25, middle_east(d4)=13, central_asia(d3)=5, south_asia(d2)=1, east_asia(d1)=0
+	else_if = {
+		limit = { halfsade_captives_in_macro_southeast_asia_trigger = yes }
+		debug_log = "halfsade_captives: slot $SLOT$ home macro detected: southeast_asia"
+		
+		random_list = {
+			5000 = { halfsade_captives_try_macro_effect = { MACRO = europe SLOT = $SLOT$ } }
+			2500 = { halfsade_captives_try_macro_effect = { MACRO = africa SLOT = $SLOT$ } }
+			1300 = { halfsade_captives_try_macro_effect = { MACRO = middle_east SLOT = $SLOT$ } }
+			500 = { halfsade_captives_try_macro_effect = { MACRO = central_asia SLOT = $SLOT$ } }
+			100 = { halfsade_captives_try_macro_effect = { MACRO = south_asia SLOT = $SLOT$ } }
+		}
+		
+		halfsade_captives_try_macro_effect = { MACRO = europe SLOT = $SLOT$ }
+		halfsade_captives_try_macro_effect = { MACRO = africa SLOT = $SLOT$ }
+		halfsade_captives_try_macro_effect = { MACRO = middle_east SLOT = $SLOT$ }
+		halfsade_captives_try_macro_effect = { MACRO = central_asia SLOT = $SLOT$ }
+		halfsade_captives_try_macro_effect = { MACRO = south_asia SLOT = $SLOT$ }
+		halfsade_captives_try_macro_effect = { MACRO = east_asia SLOT = $SLOT$ }
+	}
+	
+	if = {
+		limit = {
+			NOR = {
+				halfsade_captives_in_macro_europe_trigger = yes
+				halfsade_captives_in_macro_africa_trigger = yes
+				halfsade_captives_in_macro_middle_east_trigger = yes
+				halfsade_captives_in_macro_central_asia_trigger = yes
+				halfsade_captives_in_macro_south_asia_trigger = yes
+				halfsade_captives_in_macro_east_asia_trigger = yes
+				halfsade_captives_in_macro_southeast_asia_trigger = yes
+			}
+		}
+		debug_log = "halfsade_captives: slot $SLOT$ home macro NOT detected - add its region ids to MACROS"
+	}
+
+	halfsade_captives_try_any_effect = { SLOT = $SLOT$ }
+
+	if = {
+		limit = {
+			NOT = { exists = scope:halfsade_far_ruler_$SLOT$ }
+		}
+		save_scope_as = halfsade_far_ruler_$SLOT$
+		debug_log = "halfsade_captives: slot $SLOT$ fell back to the home culture"
+	}
+}

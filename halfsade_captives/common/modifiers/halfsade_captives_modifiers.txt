@@ -1,0 +1,14 @@
+﻿# captive modifier
+halfsade_captives_far_from_home_modifier = {
+	icon = travel_negative
+	stress_gain_mult = 0.2
+	general_opinion = -5
+	diplomacy = -1
+}
+
+# root modifier
+halfsade_captives_exotic_taste_modifier = {
+	icon = grandeur_negative
+	courtier_and_guest_opinion = -5
+	dynasty_opinion = -5
+}

@@ -1,0 +1,126 @@
+﻿# check root home
+halfsade_captives_in_macro_europe_trigger = {
+	trigger_if = {
+		limit = { exists = capital_province }
+		capital_province = {
+			OR = {
+				geographical_region = world_europe
+			}
+		}
+	}
+	trigger_else = {
+		location = {
+			OR = {
+				geographical_region = world_europe
+			}
+		}
+	}
+}
+
+halfsade_captives_in_macro_africa_trigger = {
+	trigger_if = {
+		limit = { exists = capital_province }
+		capital_province = {
+			OR = {
+				geographical_region = world_africa
+			}
+		}
+	}
+	trigger_else = {
+		location = {
+			OR = {
+				geographical_region = world_africa
+			}
+		}
+	}
+}
+
+halfsade_captives_in_macro_middle_east_trigger = {
+	trigger_if = {
+		limit = { exists = capital_province }
+		capital_province = {
+			OR = {
+				geographical_region = world_middle_east
+			}
+		}
+	}
+	trigger_else = {
+		location = {
+			OR = {
+				geographical_region = world_middle_east
+			}
+		}
+	}
+}
+
+halfsade_captives_in_macro_central_asia_trigger = {
+	trigger_if = {
+		limit = { exists = capital_province }
+		capital_province = {
+			OR = {
+				geographical_region = world_steppe
+			}
+		}
+	}
+	trigger_else = {
+		location = {
+			OR = {
+				geographical_region = world_steppe
+			}
+		}
+	}
+}
+
+halfsade_captives_in_macro_south_asia_trigger = {
+	trigger_if = {
+		limit = { exists = capital_province }
+		capital_province = {
+			OR = {
+				geographical_region = world_india
+			}
+		}
+	}
+	trigger_else = {
+		location = {
+			OR = {
+				geographical_region = world_india
+			}
+		}
+	}
+}
+
+halfsade_captives_in_macro_east_asia_trigger = {
+	trigger_if = {
+		limit = { exists = capital_province }
+		capital_province = {
+			OR = {
+				geographical_region = world_tibet
+			}
+		}
+	}
+	trigger_else = {
+		location = {
+			OR = {
+				geographical_region = world_tibet
+			}
+		}
+	}
+}
+
+halfsade_captives_in_macro_southeast_asia_trigger = {
+	trigger_if = {
+		limit = { exists = capital_province }
+		capital_province = {
+			OR = {
+				geographical_region = world_burma
+			}
+		}
+	}
+	trigger_else = {
+		location = {
+			OR = {
+				geographical_region = world_burma
+			}
+		}
+	}
+}

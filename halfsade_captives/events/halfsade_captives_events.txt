@@ -1,0 +1,89 @@
+﻿namespace = halfsade_captives
+
+# hidden event to delay arrival
+halfsade_captives.0001 = {
+	type = character_event
+	hidden = yes
+
+	immediate = {
+		send_interface_toast = {
+			title = halfsade_captives.0001.toast
+			custom_tooltip = halfsade_captives.0001.toast_desc
+		}
+		trigger_event = {
+			id = halfsade_captives.0002
+			days = 20
+		}
+	}
+}
+
+# captive selector
+halfsade_captives.0002 = {
+	type = character_event
+	title = halfsade_captives.0002.t
+	desc = halfsade_captives.0002.desc
+	theme = prison
+
+	left_portrait = {
+		character = scope:halfsade_captive_1
+		animation = prisonhouse
+	}
+	lower_center_portrait = {
+		character = scope:halfsade_captive_2
+		animation = prisonhouse
+	}
+	right_portrait = {
+		character = scope:halfsade_captive_3
+		animation = prisonhouse
+	}
+
+	immediate = {
+		save_scope_as = halfsade_home_ruler
+
+		halfsade_captives_pick_far_ruler_effect = { SLOT = 1 }
+		halfsade_captives_pick_far_ruler_effect = { SLOT = 2 }
+		halfsade_captives_pick_far_ruler_effect = { SLOT = 3 }
+
+		halfsade_captives_create_captive_effect = { SLOT = 1 }
+		halfsade_captives_create_captive_effect = { SLOT = 2 }
+		halfsade_captives_create_captive_effect = { SLOT = 3 }
+	}
+
+	option = {
+		name = halfsade_captives.0002.a
+		halfsade_captives_welcome_effect = { SLOT = 1 }
+		halfsade_captives_welcome_effect = { SLOT = 2 }
+		halfsade_captives_welcome_effect = { SLOT = 3 }
+	}
+
+	option = {
+		name = halfsade_captives.0002.b
+		custom_tooltip = halfsade_captives.0002.others_return
+		halfsade_captives_welcome_effect = { SLOT = 1 }
+		halfsade_captives_send_home_effect = { SLOT = 2 }
+		halfsade_captives_send_home_effect = { SLOT = 3 }
+	}
+
+	option = {
+		name = halfsade_captives.0002.c
+		custom_tooltip = halfsade_captives.0002.others_return
+		halfsade_captives_welcome_effect = { SLOT = 2 }
+		halfsade_captives_send_home_effect = { SLOT = 1 }
+		halfsade_captives_send_home_effect = { SLOT = 3 }
+	}
+
+	option = {
+		name = halfsade_captives.0002.d
+		custom_tooltip = halfsade_captives.0002.others_return
+		halfsade_captives_welcome_effect = { SLOT = 3 }
+		halfsade_captives_send_home_effect = { SLOT = 1 }
+		halfsade_captives_send_home_effect = { SLOT = 2 }
+	}
+
+	option = {
+		name = halfsade_captives.0002.e
+		halfsade_captives_send_home_effect = { SLOT = 1 }
+		halfsade_captives_send_home_effect = { SLOT = 2 }
+		halfsade_captives_send_home_effect = { SLOT = 3 }
+	}
+}

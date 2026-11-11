@@ -1,0 +1,15 @@
+﻿halfsade_captives_culture_unused_trigger = {
+	NOT = { culture = scope:halfsade_home_ruler.culture }
+	trigger_if = {
+		limit = { exists = scope:halfsade_far_ruler_1 }
+		NOT = { culture = scope:halfsade_far_ruler_1.culture }
+	}
+	trigger_if = {
+		limit = { exists = scope:halfsade_far_ruler_2 }
+		NOT = { culture = scope:halfsade_far_ruler_2.culture }
+	}
+	trigger_if = {
+		limit = { exists = scope:halfsade_far_ruler_3 }
+		NOT = { culture = scope:halfsade_far_ruler_3.culture }
+	}
+}

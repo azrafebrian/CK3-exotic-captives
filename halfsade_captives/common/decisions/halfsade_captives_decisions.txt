@@ -1,0 +1,42 @@
+﻿halfsade_captives_summon_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_prison.dds"
+	}
+	decision_group_type = personal
+    sort_order = 0
+	selection_tooltip = halfsade_captives_summon_decision_tooltip
+	confirm_text = halfsade_captives_summon_decision_confirm
+
+	ai_check_interval = 0
+
+	cooldown = { years = 2 }
+
+	is_shown = {
+		is_ruler = yes
+		is_adult = yes
+	}
+
+	is_valid_showing_failures_only = {
+		is_imprisoned = no
+		is_incapable = no
+	}
+
+	cost = {
+		gold = 200
+		piety = 250
+		prestige = 250
+	}
+
+	effect = {
+		show_as_tooltip = {
+			add_character_modifier = {
+				modifier = halfsade_captives_exotic_taste_modifier
+				years = 5
+			}
+		}
+
+		custom_tooltip = halfsade_captives_summon_decision_effect
+		
+		trigger_event = halfsade_captives.0001
+	}
+}
