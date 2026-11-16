@@ -6,21 +6,32 @@ halfsade_captives_create_captive_effect = {
 		}
 		random_list = {
 			85 = {
-				halfsade_captives_spawn_captive_effect = { SLOT = $SLOT$ GENDER = female }
+				halfsade_captives_roll_noble_effect = { SLOT = $SLOT$ GENDER = female }
 			}
 			15 = {
-				halfsade_captives_spawn_captive_effect = { SLOT = $SLOT$ GENDER = male }
+				halfsade_captives_roll_noble_effect = { SLOT = $SLOT$ GENDER = male }
 			}
 		}
 	}
 	else = {
 		random_list = {
 			85 = {
-				halfsade_captives_spawn_captive_effect = { SLOT = $SLOT$ GENDER = male }
+				halfsade_captives_roll_noble_effect = { SLOT = $SLOT$ GENDER = male }
 			}
 			15 = {
-				halfsade_captives_spawn_captive_effect = { SLOT = $SLOT$ GENDER = female }
+				halfsade_captives_roll_noble_effect = { SLOT = $SLOT$ GENDER = female }
 			}
+		}
+	}
+}
+
+halfsade_captives_roll_noble_effect = {
+	random_list = {
+		15 = {
+			halfsade_captives_spawn_captive_effect = { SLOT = $SLOT$ GENDER = $GENDER$ DYNASTY = generate }
+		}
+		85 = {
+			halfsade_captives_spawn_captive_effect = { SLOT = $SLOT$ GENDER = $GENDER$ DYNASTY = none }
 		}
 	}
 }
@@ -28,13 +39,17 @@ halfsade_captives_create_captive_effect = {
 halfsade_captives_spawn_captive_effect = {
 	create_character = {
 		location = scope:halfsade_home_ruler.capital_province
-		culture = scope:halfsade_far_ruler_$SLOT$.culture
-		faith = scope:halfsade_far_ruler_$SLOT$.faith
+		culture = scope:halfsade_far_prov_$SLOT$.culture
+		faith = scope:halfsade_far_prov_$SLOT$.faith
 		gender = $GENDER$
 		age = { 16 30 }
-		dynasty = none
+		dynasty = $DYNASTY$
 		random_traits = yes
 		save_scope_as = halfsade_captive_$SLOT$
+	}
+
+	scope:halfsade_captive_$SLOT$ = {
+		halfsade_captives_slim_effect = yes
 	}
 
 	# 10% chance of a good inheritable trait
@@ -58,12 +73,22 @@ halfsade_captives_good_trait_effect = {
 	}
 }
 
+# captives weight
+halfsade_captives_slim_effect = {
+	hidden_effect = {
+		change_current_weight = -20
+	}
+}
+
 halfsade_captives_welcome_effect = {
 	add_courtier = scope:halfsade_captive_$SLOT$
 	scope:halfsade_captive_$SLOT$ = {
 		add_character_modifier = {
 			modifier = halfsade_captives_far_from_home_modifier
 			years = 5
+		}
+		add_character_modifier = {
+			modifier = halfsade_captives_fine_lineage_modifier
 		}
 	}
 	add_character_modifier = {

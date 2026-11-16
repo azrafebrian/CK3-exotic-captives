@@ -26,7 +26,7 @@ Adds Receive Exotic Captives decision, allowing you to get a character from far-
 
 ### Requirements
 
-Cost 200 golds, 250 prestige, and 250 piety
+Cost based on your title rank
 
 ### Effects
 
@@ -44,3 +44,18 @@ Cost 200 golds, 250 prestige, and 250 piety
 1. If you're playing as male, presented characters are 85% female and 15% male.
 2. If you're playing as female, presented characters are 85% male and 15% female.
 3. 10% chance of presented characters having good inheritable traits.
+4. 15% chance of presented characters are noble blood.
+
+### Changelog (Update 1.1)
+
+1. Region Selector: Select which region the captives are taken from.
+2. Price Scaling: Costs are now adjusted depending on your title rank.
+3. Added a chance for captured captives to be of noble blood.
+4. Added a modifier for captives, increasing the chance of their children having a good trait.
+5. Adjusted the duration it takes for merchants to retrieve your captives.
+6. Adjusted captives weight.
+
+- Fixed several text errors.
+- Fixed highlighted words.
+- Fixed issues with regions and sub-regions.
+- New update thumbnail.

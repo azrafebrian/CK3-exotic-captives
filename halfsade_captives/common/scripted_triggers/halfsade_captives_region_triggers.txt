@@ -41,6 +41,7 @@ halfsade_captives_in_macro_middle_east_trigger = {
 		capital_province = {
 			OR = {
 				geographical_region = world_middle_east
+				geographical_region = world_asia_minor
 			}
 		}
 	}
@@ -48,6 +49,7 @@ halfsade_captives_in_macro_middle_east_trigger = {
 		location = {
 			OR = {
 				geographical_region = world_middle_east
+				geographical_region = world_asia_minor
 			}
 		}
 	}
@@ -59,6 +61,7 @@ halfsade_captives_in_macro_central_asia_trigger = {
 		capital_province = {
 			OR = {
 				geographical_region = world_steppe
+				geographical_region = world_siberia
 			}
 		}
 	}
@@ -66,6 +69,7 @@ halfsade_captives_in_macro_central_asia_trigger = {
 		location = {
 			OR = {
 				geographical_region = world_steppe
+				geographical_region = world_siberia
 			}
 		}
 	}
@@ -94,6 +98,8 @@ halfsade_captives_in_macro_east_asia_trigger = {
 		limit = { exists = capital_province }
 		capital_province = {
 			OR = {
+				geographical_region = world_asia_east
+				geographical_region = world_asia_north_east
 				geographical_region = world_tibet
 			}
 		}
@@ -101,6 +107,8 @@ halfsade_captives_in_macro_east_asia_trigger = {
 	trigger_else = {
 		location = {
 			OR = {
+				geographical_region = world_asia_east
+				geographical_region = world_asia_north_east
 				geographical_region = world_tibet
 			}
 		}
@@ -112,14 +120,251 @@ halfsade_captives_in_macro_southeast_asia_trigger = {
 		limit = { exists = capital_province }
 		capital_province = {
 			OR = {
-				geographical_region = world_burma
+				geographical_region = world_asia_southeast
 			}
 		}
 	}
 	trigger_else = {
 		location = {
 			OR = {
-				geographical_region = world_burma
+				geographical_region = world_asia_southeast
+			}
+		}
+	}
+}
+
+halfsade_captives_option_available_europe_trigger = {
+	trigger_if = {
+		limit = { halfsade_captives_in_macro_europe_trigger = yes }
+		always = no
+	}
+	trigger_else = {
+		OR = {
+			any_county_in_region = {
+				region = world_europe_west_britannia
+				halfsade_captives_county_valid_trigger = yes
+			}
+			any_county_in_region = {
+				region = world_europe_west_germania
+				halfsade_captives_county_valid_trigger = yes
+			}
+			any_county_in_region = {
+				region = world_europe_west_francia
+				halfsade_captives_county_valid_trigger = yes
+			}
+			any_county_in_region = {
+				region = world_europe_west_iberia
+				halfsade_captives_county_valid_trigger = yes
+			}
+			any_county_in_region = {
+				region = world_europe_north
+				halfsade_captives_county_valid_trigger = yes
+			}
+			any_county_in_region = {
+				region = world_europe_south_east
+				halfsade_captives_county_valid_trigger = yes
+			}
+			any_county_in_region = {
+				region = world_europe_south_italy
+				halfsade_captives_county_valid_trigger = yes
+			}
+			any_county_in_region = {
+				region = world_europe_east
+				halfsade_captives_county_valid_trigger = yes
+			}
+		}
+	}
+}
+
+halfsade_captives_option_available_africa_trigger = {
+	trigger_if = {
+		limit = { halfsade_captives_in_macro_africa_trigger = yes }
+		always = no
+	}
+	trigger_else = {
+		OR = {
+			any_county_in_region = {
+				region = world_africa_north_west
+				halfsade_captives_county_valid_trigger = yes
+			}
+			any_county_in_region = {
+				region = world_africa_north_east
+				halfsade_captives_county_valid_trigger = yes
+			}
+			any_county_in_region = {
+				region = world_africa_west
+				halfsade_captives_county_valid_trigger = yes
+			}
+			any_county_in_region = {
+				region = world_africa_east
+				halfsade_captives_county_valid_trigger = yes
+			}
+			any_county_in_region = {
+				region = world_africa_sahara
+				halfsade_captives_county_valid_trigger = yes
+			}
+		}
+	}
+}
+
+halfsade_captives_option_available_middle_east_trigger = {
+	trigger_if = {
+		limit = { halfsade_captives_in_macro_middle_east_trigger = yes }
+		always = no
+	}
+	trigger_else = {
+		OR = {
+			any_county_in_region = {
+				region = world_middle_east_jerusalem
+				halfsade_captives_county_valid_trigger = yes
+			}
+			any_county_in_region = {
+				region = world_middle_east_arabia
+				halfsade_captives_county_valid_trigger = yes
+			}
+			any_county_in_region = {
+				region = world_middle_east_persia
+				halfsade_captives_county_valid_trigger = yes
+			}
+			any_county_in_region = {
+				region = world_asia_minor
+				halfsade_captives_county_valid_trigger = yes
+			}
+		}
+	}
+}
+
+halfsade_captives_option_available_central_asia_trigger = {
+	trigger_if = {
+		limit = { halfsade_captives_in_macro_central_asia_trigger = yes }
+		always = no
+	}
+	trigger_else = {
+		OR = {
+			any_county_in_region = {
+				region = world_steppe_tarim
+				halfsade_captives_county_valid_trigger = yes
+			}
+			any_county_in_region = {
+				region = world_steppe_west
+				halfsade_captives_county_valid_trigger = yes
+			}
+			any_county_in_region = {
+				region = world_steppe_central
+				halfsade_captives_county_valid_trigger = yes
+			}
+			any_county_in_region = {
+				region = world_steppe_east
+				halfsade_captives_county_valid_trigger = yes
+			}
+			any_county_in_region = {
+				region = world_siberia
+				halfsade_captives_county_valid_trigger = yes
+			}
+		}
+	}
+}
+
+halfsade_captives_option_available_south_asia_trigger = {
+	trigger_if = {
+		limit = { halfsade_captives_in_macro_south_asia_trigger = yes }
+		always = no
+	}
+	trigger_else = {
+		OR = {
+			any_county_in_region = {
+				region = world_india_deccan
+				halfsade_captives_county_valid_trigger = yes
+			}
+			any_county_in_region = {
+				region = world_india_bengal
+				halfsade_captives_county_valid_trigger = yes
+			}
+			any_county_in_region = {
+				region = world_india_rajastan
+				halfsade_captives_county_valid_trigger = yes
+			}
+		}
+	}
+}
+
+halfsade_captives_option_available_east_asia_trigger = {
+	trigger_if = {
+		limit = { halfsade_captives_in_macro_east_asia_trigger = yes }
+		always = no
+	}
+	trigger_else = {
+		OR = {
+			any_county_in_region = {
+				region = world_asia_china
+				halfsade_captives_county_valid_trigger = yes
+			}
+			any_county_in_region = {
+				region = world_asia_korea
+				halfsade_captives_county_valid_trigger = yes
+			}
+			any_county_in_region = {
+				region = world_asia_japan
+				halfsade_captives_county_valid_trigger = yes
+			}
+			any_county_in_region = {
+				region = world_asia_sakhalin_hokkaido
+				halfsade_captives_county_valid_trigger = yes
+			}
+			any_county_in_region = {
+				region = world_asia_north_east
+				halfsade_captives_county_valid_trigger = yes
+			}
+			any_county_in_region = {
+				region = world_tibet
+				halfsade_captives_county_valid_trigger = yes
+			}
+		}
+	}
+}
+
+halfsade_captives_option_available_southeast_asia_trigger = {
+	trigger_if = {
+		limit = { halfsade_captives_in_macro_southeast_asia_trigger = yes }
+		always = no
+	}
+	trigger_else = {
+		OR = {
+			any_county_in_region = {
+				region = world_asia_vietnam
+				halfsade_captives_county_valid_trigger = yes
+			}
+			any_county_in_region = {
+				region = world_asia_cambodia
+				halfsade_captives_county_valid_trigger = yes
+			}
+			any_county_in_region = {
+				region = world_asia_thailand
+				halfsade_captives_county_valid_trigger = yes
+			}
+			any_county_in_region = {
+				region = world_asia_malaysia
+				halfsade_captives_county_valid_trigger = yes
+			}
+			any_county_in_region = {
+				region = world_burma
+				halfsade_captives_county_valid_trigger = yes
+			}
+			any_county_in_region = {
+				region = world_asia_philippines
+				halfsade_captives_county_valid_trigger = yes
+			}
+			any_county_in_region = {
+				region = world_asia_borneo
+				halfsade_captives_county_valid_trigger = yes
+			}
+			any_county_in_region = {
+				region = world_asia_sulawesi_maluku
+				halfsade_captives_county_valid_trigger = yes
+			}
+			any_county_in_region = {
+				region = world_asia_indonesia
+				halfsade_captives_county_valid_trigger = yes
 			}
 		}
 	}

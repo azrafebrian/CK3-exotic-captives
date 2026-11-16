@@ -1,0 +1,42 @@
+﻿# default price = duke rank (200 gold, 250 piety, 250 prestige)
+
+# multiplier
+halfsade_captives_cost_multiplier = {
+	value = 0.4
+	if = {
+		limit = { highest_held_title_tier >= tier_county }
+		add = 0.2
+	}
+	if = {
+		limit = { highest_held_title_tier >= tier_duchy }
+		add = 0.4
+	}
+	if = {
+		limit = { highest_held_title_tier >= tier_kingdom }
+		add = 1.0
+	}
+	if = {
+		limit = { highest_held_title_tier >= tier_empire }
+		add = 1.0
+	}
+	if = {
+		# hegemony
+		limit = { highest_held_title_tier >= 6 }
+		add = 1.0
+	}
+}
+
+halfsade_captives_gold_cost = {
+	value = 200
+	multiply = halfsade_captives_cost_multiplier
+}
+
+halfsade_captives_piety_cost = {
+	value = 250
+	multiply = halfsade_captives_cost_multiplier
+}
+
+halfsade_captives_prestige_cost = {
+	value = 250
+	multiply = halfsade_captives_cost_multiplier
+}

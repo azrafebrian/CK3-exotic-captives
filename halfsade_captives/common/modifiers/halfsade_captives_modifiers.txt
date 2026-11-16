@@ -1,4 +1,4 @@
-﻿# captive modifier
+﻿# captive modifier - court
 halfsade_captives_far_from_home_modifier = {
 	icon = travel_negative
 	stress_gain_mult = 0.2
@@ -11,4 +11,11 @@ halfsade_captives_exotic_taste_modifier = {
 	icon = grandeur_negative
 	courtier_and_guest_opinion = -5
 	dynasty_opinion = -5
+}
+
+# captive modifier - inheritable trait
+halfsade_captives_fine_lineage_modifier = {
+	icon = family_positive
+	positive_random_genetic_chance = 0.1
+	genetic_trait_strengthen_chance = 0.1
 }

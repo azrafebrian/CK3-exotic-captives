@@ -2,7 +2,7 @@
 	picture = {
 		reference = "gfx/interface/illustrations/decisions/decision_prison.dds"
 	}
-	decision_group_type = personal
+	decision_group_type = decisions
     sort_order = 0
 	selection_tooltip = halfsade_captives_summon_decision_tooltip
 	confirm_text = halfsade_captives_summon_decision_confirm
@@ -22,16 +22,16 @@
 	}
 
 	cost = {
-		gold = 200
-		piety = 250
-		prestige = 250
+		gold = halfsade_captives_gold_cost
+		piety = halfsade_captives_piety_cost
+		prestige = halfsade_captives_prestige_cost
 	}
 
 	effect = {
 		show_as_tooltip = {
 			add_character_modifier = {
 				modifier = halfsade_captives_exotic_taste_modifier
-				years = 5
+				years = 2
 			}
 		}
 

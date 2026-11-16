@@ -1,203 +1,631 @@
-﻿halfsade_captives_try_macro_effect = {
+﻿halfsade_captives_try_sub_effect = {
 	if = {
 		limit = {
-			NOT = { exists = scope:halfsade_far_ruler_$SLOT$ }
+			NOT = { exists = scope:halfsade_far_prov_$SLOT$ }
 		}
-		random_ruler = {
+		random_county_in_region = {
+			region = $SUB$
 			limit = {
-				halfsade_captives_culture_unused_trigger = yes
-				halfsade_captives_in_macro_$MACRO$_trigger = yes
+				halfsade_captives_county_valid_trigger = yes
 			}
-			save_scope_as = halfsade_far_ruler_$SLOT$
-			debug_log = "halfsade_captives: slot $SLOT$ picked from macro $MACRO$"
+			title_province = {
+				save_scope_as = halfsade_far_prov_$SLOT$
+			}
 		}
 	}
 }
 
-halfsade_captives_try_any_effect = {
+halfsade_captives_try_any_county_effect = {
 	if = {
 		limit = {
-			NOT = { exists = scope:halfsade_far_ruler_$SLOT$ }
+			NOT = { exists = scope:halfsade_far_prov_$SLOT$ }
 		}
-		random_ruler = {
+		random_county = {
 			limit = {
-				halfsade_captives_culture_unused_trigger = yes
+				halfsade_captives_county_valid_trigger = yes
 			}
-			save_scope_as = halfsade_far_ruler_$SLOT$
-			debug_log = "halfsade_captives: slot $SLOT$ picked from ANYWHERE (distance rules not applied)"
+			title_province = {
+				save_scope_as = halfsade_far_prov_$SLOT$
+			}
 		}
 	}
 }
 
-halfsade_captives_pick_far_ruler_effect = {
+halfsade_captives_pick_in_europe_effect = {
+	if = {
+		limit = {
+			NOT = { exists = scope:halfsade_far_prov_$SLOT$ }
+		}
+		random_list = {
+			1 = { halfsade_captives_try_sub_effect = { SUB = world_europe_west_britannia SLOT = $SLOT$ } }
+			1 = { halfsade_captives_try_sub_effect = { SUB = world_europe_west_germania SLOT = $SLOT$ } }
+			1 = { halfsade_captives_try_sub_effect = { SUB = world_europe_west_francia SLOT = $SLOT$ } }
+			1 = { halfsade_captives_try_sub_effect = { SUB = world_europe_west_iberia SLOT = $SLOT$ } }
+			1 = { halfsade_captives_try_sub_effect = { SUB = world_europe_north SLOT = $SLOT$ } }
+			1 = { halfsade_captives_try_sub_effect = { SUB = world_europe_south_east SLOT = $SLOT$ } }
+			1 = { halfsade_captives_try_sub_effect = { SUB = world_europe_south_italy SLOT = $SLOT$ } }
+			1 = { halfsade_captives_try_sub_effect = { SUB = world_europe_east SLOT = $SLOT$ } }
+		}
+		halfsade_captives_try_sub_effect = { SUB = world_europe_west_britannia SLOT = $SLOT$ }
+		halfsade_captives_try_sub_effect = { SUB = world_europe_west_germania SLOT = $SLOT$ }
+		halfsade_captives_try_sub_effect = { SUB = world_europe_west_francia SLOT = $SLOT$ }
+		halfsade_captives_try_sub_effect = { SUB = world_europe_west_iberia SLOT = $SLOT$ }
+		halfsade_captives_try_sub_effect = { SUB = world_europe_north SLOT = $SLOT$ }
+		halfsade_captives_try_sub_effect = { SUB = world_europe_south_east SLOT = $SLOT$ }
+		halfsade_captives_try_sub_effect = { SUB = world_europe_south_italy SLOT = $SLOT$ }
+		halfsade_captives_try_sub_effect = { SUB = world_europe_east SLOT = $SLOT$ }
+	}
+}
+
+halfsade_captives_pick_in_africa_effect = {
+	if = {
+		limit = {
+			NOT = { exists = scope:halfsade_far_prov_$SLOT$ }
+		}
+		random_list = {
+			1 = { halfsade_captives_try_sub_effect = { SUB = world_africa_north_west SLOT = $SLOT$ } }
+			1 = { halfsade_captives_try_sub_effect = { SUB = world_africa_north_east SLOT = $SLOT$ } }
+			1 = { halfsade_captives_try_sub_effect = { SUB = world_africa_west SLOT = $SLOT$ } }
+			1 = { halfsade_captives_try_sub_effect = { SUB = world_africa_east SLOT = $SLOT$ } }
+			1 = { halfsade_captives_try_sub_effect = { SUB = world_africa_sahara SLOT = $SLOT$ } }
+		}
+		halfsade_captives_try_sub_effect = { SUB = world_africa_north_west SLOT = $SLOT$ }
+		halfsade_captives_try_sub_effect = { SUB = world_africa_north_east SLOT = $SLOT$ }
+		halfsade_captives_try_sub_effect = { SUB = world_africa_west SLOT = $SLOT$ }
+		halfsade_captives_try_sub_effect = { SUB = world_africa_east SLOT = $SLOT$ }
+		halfsade_captives_try_sub_effect = { SUB = world_africa_sahara SLOT = $SLOT$ }
+	}
+}
+
+halfsade_captives_pick_in_middle_east_effect = {
+	if = {
+		limit = {
+			NOT = { exists = scope:halfsade_far_prov_$SLOT$ }
+		}
+		random_list = {
+			1 = { halfsade_captives_try_sub_effect = { SUB = world_middle_east_jerusalem SLOT = $SLOT$ } }
+			1 = { halfsade_captives_try_sub_effect = { SUB = world_middle_east_arabia SLOT = $SLOT$ } }
+			1 = { halfsade_captives_try_sub_effect = { SUB = world_middle_east_persia SLOT = $SLOT$ } }
+			1 = { halfsade_captives_try_sub_effect = { SUB = world_asia_minor SLOT = $SLOT$ } }
+		}
+		halfsade_captives_try_sub_effect = { SUB = world_middle_east_jerusalem SLOT = $SLOT$ }
+		halfsade_captives_try_sub_effect = { SUB = world_middle_east_arabia SLOT = $SLOT$ }
+		halfsade_captives_try_sub_effect = { SUB = world_middle_east_persia SLOT = $SLOT$ }
+		halfsade_captives_try_sub_effect = { SUB = world_asia_minor SLOT = $SLOT$ }
+	}
+}
+
+halfsade_captives_pick_in_central_asia_effect = {
+	if = {
+		limit = {
+			NOT = { exists = scope:halfsade_far_prov_$SLOT$ }
+		}
+		random_list = {
+			1 = { halfsade_captives_try_sub_effect = { SUB = world_steppe_tarim SLOT = $SLOT$ } }
+			1 = { halfsade_captives_try_sub_effect = { SUB = world_steppe_west SLOT = $SLOT$ } }
+			1 = { halfsade_captives_try_sub_effect = { SUB = world_steppe_central SLOT = $SLOT$ } }
+			1 = { halfsade_captives_try_sub_effect = { SUB = world_steppe_east SLOT = $SLOT$ } }
+			1 = { halfsade_captives_try_sub_effect = { SUB = world_siberia SLOT = $SLOT$ } }
+		}
+		halfsade_captives_try_sub_effect = { SUB = world_steppe_tarim SLOT = $SLOT$ }
+		halfsade_captives_try_sub_effect = { SUB = world_steppe_west SLOT = $SLOT$ }
+		halfsade_captives_try_sub_effect = { SUB = world_steppe_central SLOT = $SLOT$ }
+		halfsade_captives_try_sub_effect = { SUB = world_steppe_east SLOT = $SLOT$ }
+		halfsade_captives_try_sub_effect = { SUB = world_siberia SLOT = $SLOT$ }
+	}
+}
+
+halfsade_captives_pick_in_south_asia_effect = {
+	if = {
+		limit = {
+			NOT = { exists = scope:halfsade_far_prov_$SLOT$ }
+		}
+		random_list = {
+			1 = { halfsade_captives_try_sub_effect = { SUB = world_india_deccan SLOT = $SLOT$ } }
+			1 = { halfsade_captives_try_sub_effect = { SUB = world_india_bengal SLOT = $SLOT$ } }
+			1 = { halfsade_captives_try_sub_effect = { SUB = world_india_rajastan SLOT = $SLOT$ } }
+		}
+		halfsade_captives_try_sub_effect = { SUB = world_india_deccan SLOT = $SLOT$ }
+		halfsade_captives_try_sub_effect = { SUB = world_india_bengal SLOT = $SLOT$ }
+		halfsade_captives_try_sub_effect = { SUB = world_india_rajastan SLOT = $SLOT$ }
+	}
+}
+
+halfsade_captives_pick_in_east_asia_effect = {
+	if = {
+		limit = {
+			NOT = { exists = scope:halfsade_far_prov_$SLOT$ }
+		}
+		random_list = {
+			1 = { halfsade_captives_try_sub_effect = { SUB = world_asia_china SLOT = $SLOT$ } }
+			1 = { halfsade_captives_try_sub_effect = { SUB = world_asia_korea SLOT = $SLOT$ } }
+			1 = { halfsade_captives_try_sub_effect = { SUB = world_asia_japan SLOT = $SLOT$ } }
+			1 = { halfsade_captives_try_sub_effect = { SUB = world_asia_sakhalin_hokkaido SLOT = $SLOT$ } }
+			1 = { halfsade_captives_try_sub_effect = { SUB = world_asia_north_east SLOT = $SLOT$ } }
+			1 = { halfsade_captives_try_sub_effect = { SUB = world_tibet SLOT = $SLOT$ } }
+		}
+		halfsade_captives_try_sub_effect = { SUB = world_asia_china SLOT = $SLOT$ }
+		halfsade_captives_try_sub_effect = { SUB = world_asia_korea SLOT = $SLOT$ }
+		halfsade_captives_try_sub_effect = { SUB = world_asia_japan SLOT = $SLOT$ }
+		halfsade_captives_try_sub_effect = { SUB = world_asia_sakhalin_hokkaido SLOT = $SLOT$ }
+		halfsade_captives_try_sub_effect = { SUB = world_asia_north_east SLOT = $SLOT$ }
+		halfsade_captives_try_sub_effect = { SUB = world_tibet SLOT = $SLOT$ }
+	}
+}
+
+halfsade_captives_pick_in_southeast_asia_effect = {
+	if = {
+		limit = {
+			NOT = { exists = scope:halfsade_far_prov_$SLOT$ }
+		}
+		random_list = {
+			1 = { halfsade_captives_try_sub_effect = { SUB = world_asia_vietnam SLOT = $SLOT$ } }
+			1 = { halfsade_captives_try_sub_effect = { SUB = world_asia_cambodia SLOT = $SLOT$ } }
+			1 = { halfsade_captives_try_sub_effect = { SUB = world_asia_thailand SLOT = $SLOT$ } }
+			1 = { halfsade_captives_try_sub_effect = { SUB = world_asia_malaysia SLOT = $SLOT$ } }
+			1 = { halfsade_captives_try_sub_effect = { SUB = world_burma SLOT = $SLOT$ } }
+			1 = { halfsade_captives_try_sub_effect = { SUB = world_asia_philippines SLOT = $SLOT$ } }
+			1 = { halfsade_captives_try_sub_effect = { SUB = world_asia_borneo SLOT = $SLOT$ } }
+			1 = { halfsade_captives_try_sub_effect = { SUB = world_asia_sulawesi_maluku SLOT = $SLOT$ } }
+			1 = { halfsade_captives_try_sub_effect = { SUB = world_asia_indonesia SLOT = $SLOT$ } }
+		}
+		halfsade_captives_try_sub_effect = { SUB = world_asia_vietnam SLOT = $SLOT$ }
+		halfsade_captives_try_sub_effect = { SUB = world_asia_cambodia SLOT = $SLOT$ }
+		halfsade_captives_try_sub_effect = { SUB = world_asia_thailand SLOT = $SLOT$ }
+		halfsade_captives_try_sub_effect = { SUB = world_asia_malaysia SLOT = $SLOT$ }
+		halfsade_captives_try_sub_effect = { SUB = world_burma SLOT = $SLOT$ }
+		halfsade_captives_try_sub_effect = { SUB = world_asia_philippines SLOT = $SLOT$ }
+		halfsade_captives_try_sub_effect = { SUB = world_asia_borneo SLOT = $SLOT$ }
+		halfsade_captives_try_sub_effect = { SUB = world_asia_sulawesi_maluku SLOT = $SLOT$ }
+		halfsade_captives_try_sub_effect = { SUB = world_asia_indonesia SLOT = $SLOT$ }
+	}
+}
+
+halfsade_captives_pick_weighted_effect = {
 	# home: europe   weights: southeast_asia(d6)=50, east_asia(d5)=25, south_asia(d4)=13, central_asia(d3)=5, middle_east(d2)=1, africa(d1)=0
 	if = {
 		limit = { halfsade_captives_in_macro_europe_trigger = yes }
-		debug_log = "halfsade_captives: slot $SLOT$ home macro detected: europe"
-		
 		random_list = {
-			5000 = { halfsade_captives_try_macro_effect = { MACRO = southeast_asia SLOT = $SLOT$ } }
-			2500 = { halfsade_captives_try_macro_effect = { MACRO = east_asia SLOT = $SLOT$ } }
-			1300 = { halfsade_captives_try_macro_effect = { MACRO = south_asia SLOT = $SLOT$ } }
-			500 = { halfsade_captives_try_macro_effect = { MACRO = central_asia SLOT = $SLOT$ } }
-			100 = { halfsade_captives_try_macro_effect = { MACRO = middle_east SLOT = $SLOT$ } }
+			5000 = { halfsade_captives_pick_in_southeast_asia_effect = { SLOT = $SLOT$ } }
+			2500 = { halfsade_captives_pick_in_east_asia_effect = { SLOT = $SLOT$ } }
+			1300 = { halfsade_captives_pick_in_south_asia_effect = { SLOT = $SLOT$ } }
+			500 = { halfsade_captives_pick_in_central_asia_effect = { SLOT = $SLOT$ } }
+			100 = { halfsade_captives_pick_in_middle_east_effect = { SLOT = $SLOT$ } }
 		}
-	
-		halfsade_captives_try_macro_effect = { MACRO = southeast_asia SLOT = $SLOT$ }
-		halfsade_captives_try_macro_effect = { MACRO = east_asia SLOT = $SLOT$ }
-		halfsade_captives_try_macro_effect = { MACRO = south_asia SLOT = $SLOT$ }
-		halfsade_captives_try_macro_effect = { MACRO = central_asia SLOT = $SLOT$ }
-		halfsade_captives_try_macro_effect = { MACRO = middle_east SLOT = $SLOT$ }
-		halfsade_captives_try_macro_effect = { MACRO = africa SLOT = $SLOT$ }
+		
+		halfsade_captives_pick_in_southeast_asia_effect = { SLOT = $SLOT$ }
+		halfsade_captives_pick_in_east_asia_effect = { SLOT = $SLOT$ }
+		halfsade_captives_pick_in_south_asia_effect = { SLOT = $SLOT$ }
+		halfsade_captives_pick_in_central_asia_effect = { SLOT = $SLOT$ }
+		halfsade_captives_pick_in_middle_east_effect = { SLOT = $SLOT$ }
+		halfsade_captives_pick_in_africa_effect = { SLOT = $SLOT$ }
 	}
 	# home: africa   weights: southeast_asia(d5)=50, east_asia(d4)=25, south_asia(d3)=13, central_asia(d2)=5, europe(d1)=0.5, middle_east(d1)=0.5
 	else_if = {
 		limit = { halfsade_captives_in_macro_africa_trigger = yes }
-		debug_log = "halfsade_captives: slot $SLOT$ home macro detected: africa"
-		
 		random_list = {
-			5000 = { halfsade_captives_try_macro_effect = { MACRO = southeast_asia SLOT = $SLOT$ } }
-			2500 = { halfsade_captives_try_macro_effect = { MACRO = east_asia SLOT = $SLOT$ } }
-			1300 = { halfsade_captives_try_macro_effect = { MACRO = south_asia SLOT = $SLOT$ } }
-			500 = { halfsade_captives_try_macro_effect = { MACRO = central_asia SLOT = $SLOT$ } }
-			50 = { halfsade_captives_try_macro_effect = { MACRO = europe SLOT = $SLOT$ } }
-			50 = { halfsade_captives_try_macro_effect = { MACRO = middle_east SLOT = $SLOT$ } }
+			5000 = { halfsade_captives_pick_in_southeast_asia_effect = { SLOT = $SLOT$ } }
+			2500 = { halfsade_captives_pick_in_east_asia_effect = { SLOT = $SLOT$ } }
+			1300 = { halfsade_captives_pick_in_south_asia_effect = { SLOT = $SLOT$ } }
+			500 = { halfsade_captives_pick_in_central_asia_effect = { SLOT = $SLOT$ } }
+			50 = { halfsade_captives_pick_in_europe_effect = { SLOT = $SLOT$ } }
+			50 = { halfsade_captives_pick_in_middle_east_effect = { SLOT = $SLOT$ } }
 		}
 		
-		halfsade_captives_try_macro_effect = { MACRO = southeast_asia SLOT = $SLOT$ }
-		halfsade_captives_try_macro_effect = { MACRO = east_asia SLOT = $SLOT$ }
-		halfsade_captives_try_macro_effect = { MACRO = south_asia SLOT = $SLOT$ }
-		halfsade_captives_try_macro_effect = { MACRO = central_asia SLOT = $SLOT$ }
-		halfsade_captives_try_macro_effect = { MACRO = europe SLOT = $SLOT$ }
-		halfsade_captives_try_macro_effect = { MACRO = middle_east SLOT = $SLOT$ }
+		halfsade_captives_pick_in_southeast_asia_effect = { SLOT = $SLOT$ }
+		halfsade_captives_pick_in_east_asia_effect = { SLOT = $SLOT$ }
+		halfsade_captives_pick_in_south_asia_effect = { SLOT = $SLOT$ }
+		halfsade_captives_pick_in_central_asia_effect = { SLOT = $SLOT$ }
+		halfsade_captives_pick_in_europe_effect = { SLOT = $SLOT$ }
+		halfsade_captives_pick_in_middle_east_effect = { SLOT = $SLOT$ }
 	}
 	# home: middle_east   weights: southeast_asia(d4)=50, east_asia(d3)=25, europe(d2)=6.5, south_asia(d2)=6.5, africa(d1)=2.5, central_asia(d1)=2.5
 	else_if = {
 		limit = { halfsade_captives_in_macro_middle_east_trigger = yes }
-		debug_log = "halfsade_captives: slot $SLOT$ home macro detected: middle_east"
-		
 		random_list = {
-			5000 = { halfsade_captives_try_macro_effect = { MACRO = southeast_asia SLOT = $SLOT$ } }
-			2500 = { halfsade_captives_try_macro_effect = { MACRO = east_asia SLOT = $SLOT$ } }
-			650 = { halfsade_captives_try_macro_effect = { MACRO = europe SLOT = $SLOT$ } }
-			650 = { halfsade_captives_try_macro_effect = { MACRO = south_asia SLOT = $SLOT$ } }
-			250 = { halfsade_captives_try_macro_effect = { MACRO = africa SLOT = $SLOT$ } }
-			250 = { halfsade_captives_try_macro_effect = { MACRO = central_asia SLOT = $SLOT$ } }
+			5000 = { halfsade_captives_pick_in_southeast_asia_effect = { SLOT = $SLOT$ } }
+			2500 = { halfsade_captives_pick_in_east_asia_effect = { SLOT = $SLOT$ } }
+			650 = { halfsade_captives_pick_in_europe_effect = { SLOT = $SLOT$ } }
+			650 = { halfsade_captives_pick_in_south_asia_effect = { SLOT = $SLOT$ } }
+			250 = { halfsade_captives_pick_in_africa_effect = { SLOT = $SLOT$ } }
+			250 = { halfsade_captives_pick_in_central_asia_effect = { SLOT = $SLOT$ } }
 		}
 		
-		halfsade_captives_try_macro_effect = { MACRO = southeast_asia SLOT = $SLOT$ }
-		halfsade_captives_try_macro_effect = { MACRO = east_asia SLOT = $SLOT$ }
-		halfsade_captives_try_macro_effect = { MACRO = europe SLOT = $SLOT$ }
-		halfsade_captives_try_macro_effect = { MACRO = south_asia SLOT = $SLOT$ }
-		halfsade_captives_try_macro_effect = { MACRO = africa SLOT = $SLOT$ }
-		halfsade_captives_try_macro_effect = { MACRO = central_asia SLOT = $SLOT$ }
+		halfsade_captives_pick_in_southeast_asia_effect = { SLOT = $SLOT$ }
+		halfsade_captives_pick_in_east_asia_effect = { SLOT = $SLOT$ }
+		halfsade_captives_pick_in_europe_effect = { SLOT = $SLOT$ }
+		halfsade_captives_pick_in_south_asia_effect = { SLOT = $SLOT$ }
+		halfsade_captives_pick_in_africa_effect = { SLOT = $SLOT$ }
+		halfsade_captives_pick_in_central_asia_effect = { SLOT = $SLOT$ }
 	}
 	# home: central_asia   weights: europe(d3)=25, southeast_asia(d3)=25, africa(d2)=12.5, east_asia(d2)=12.5, middle_east(d1)=6.5, south_asia(d1)=6.5
 	else_if = {
 		limit = { halfsade_captives_in_macro_central_asia_trigger = yes }
-		debug_log = "halfsade_captives: slot $SLOT$ home macro detected: central_asia"
-		
 		random_list = {
-			2500 = { halfsade_captives_try_macro_effect = { MACRO = europe SLOT = $SLOT$ } }
-			2500 = { halfsade_captives_try_macro_effect = { MACRO = southeast_asia SLOT = $SLOT$ } }
-			1250 = { halfsade_captives_try_macro_effect = { MACRO = africa SLOT = $SLOT$ } }
-			1250 = { halfsade_captives_try_macro_effect = { MACRO = east_asia SLOT = $SLOT$ } }
-			650 = { halfsade_captives_try_macro_effect = { MACRO = middle_east SLOT = $SLOT$ } }
-			650 = { halfsade_captives_try_macro_effect = { MACRO = south_asia SLOT = $SLOT$ } }
+			2500 = { halfsade_captives_pick_in_europe_effect = { SLOT = $SLOT$ } }
+			2500 = { halfsade_captives_pick_in_southeast_asia_effect = { SLOT = $SLOT$ } }
+			1250 = { halfsade_captives_pick_in_africa_effect = { SLOT = $SLOT$ } }
+			1250 = { halfsade_captives_pick_in_east_asia_effect = { SLOT = $SLOT$ } }
+			650 = { halfsade_captives_pick_in_middle_east_effect = { SLOT = $SLOT$ } }
+			650 = { halfsade_captives_pick_in_south_asia_effect = { SLOT = $SLOT$ } }
 		}
 		
-		halfsade_captives_try_macro_effect = { MACRO = europe SLOT = $SLOT$ }
-		halfsade_captives_try_macro_effect = { MACRO = southeast_asia SLOT = $SLOT$ }
-		halfsade_captives_try_macro_effect = { MACRO = africa SLOT = $SLOT$ }
-		halfsade_captives_try_macro_effect = { MACRO = east_asia SLOT = $SLOT$ }
-		halfsade_captives_try_macro_effect = { MACRO = middle_east SLOT = $SLOT$ }
-		halfsade_captives_try_macro_effect = { MACRO = south_asia SLOT = $SLOT$ }
+		halfsade_captives_pick_in_europe_effect = { SLOT = $SLOT$ }
+		halfsade_captives_pick_in_southeast_asia_effect = { SLOT = $SLOT$ }
+		halfsade_captives_pick_in_africa_effect = { SLOT = $SLOT$ }
+		halfsade_captives_pick_in_east_asia_effect = { SLOT = $SLOT$ }
+		halfsade_captives_pick_in_middle_east_effect = { SLOT = $SLOT$ }
+		halfsade_captives_pick_in_south_asia_effect = { SLOT = $SLOT$ }
 	}
 	# home: south_asia   weights: europe(d4)=50, africa(d3)=25, middle_east(d2)=6.5, southeast_asia(d2)=6.5, central_asia(d1)=2.5, east_asia(d1)=2.5
 	else_if = {
 		limit = { halfsade_captives_in_macro_south_asia_trigger = yes }
-		debug_log = "halfsade_captives: slot $SLOT$ home macro detected: south_asia"
-		
 		random_list = {
-			5000 = { halfsade_captives_try_macro_effect = { MACRO = europe SLOT = $SLOT$ } }
-			2500 = { halfsade_captives_try_macro_effect = { MACRO = africa SLOT = $SLOT$ } }
-			650 = { halfsade_captives_try_macro_effect = { MACRO = middle_east SLOT = $SLOT$ } }
-			650 = { halfsade_captives_try_macro_effect = { MACRO = southeast_asia SLOT = $SLOT$ } }
-			250 = { halfsade_captives_try_macro_effect = { MACRO = central_asia SLOT = $SLOT$ } }
-			250 = { halfsade_captives_try_macro_effect = { MACRO = east_asia SLOT = $SLOT$ } }
+			5000 = { halfsade_captives_pick_in_europe_effect = { SLOT = $SLOT$ } }
+			2500 = { halfsade_captives_pick_in_africa_effect = { SLOT = $SLOT$ } }
+			650 = { halfsade_captives_pick_in_middle_east_effect = { SLOT = $SLOT$ } }
+			650 = { halfsade_captives_pick_in_southeast_asia_effect = { SLOT = $SLOT$ } }
+			250 = { halfsade_captives_pick_in_central_asia_effect = { SLOT = $SLOT$ } }
+			250 = { halfsade_captives_pick_in_east_asia_effect = { SLOT = $SLOT$ } }
 		}
 		
-		halfsade_captives_try_macro_effect = { MACRO = europe SLOT = $SLOT$ }
-		halfsade_captives_try_macro_effect = { MACRO = africa SLOT = $SLOT$ }
-		halfsade_captives_try_macro_effect = { MACRO = middle_east SLOT = $SLOT$ }
-		halfsade_captives_try_macro_effect = { MACRO = southeast_asia SLOT = $SLOT$ }
-		halfsade_captives_try_macro_effect = { MACRO = central_asia SLOT = $SLOT$ }
-		halfsade_captives_try_macro_effect = { MACRO = east_asia SLOT = $SLOT$ }
+		halfsade_captives_pick_in_europe_effect = { SLOT = $SLOT$ }
+		halfsade_captives_pick_in_africa_effect = { SLOT = $SLOT$ }
+		halfsade_captives_pick_in_middle_east_effect = { SLOT = $SLOT$ }
+		halfsade_captives_pick_in_southeast_asia_effect = { SLOT = $SLOT$ }
+		halfsade_captives_pick_in_central_asia_effect = { SLOT = $SLOT$ }
+		halfsade_captives_pick_in_east_asia_effect = { SLOT = $SLOT$ }
 	}
 	# home: east_asia   weights: europe(d5)=50, africa(d4)=25, middle_east(d3)=13, central_asia(d2)=5, south_asia(d1)=0.5, southeast_asia(d1)=0.5
 	else_if = {
 		limit = { halfsade_captives_in_macro_east_asia_trigger = yes }
-		debug_log = "halfsade_captives: slot $SLOT$ home macro detected: east_asia"
-		
 		random_list = {
-			5000 = { halfsade_captives_try_macro_effect = { MACRO = europe SLOT = $SLOT$ } }
-			2500 = { halfsade_captives_try_macro_effect = { MACRO = africa SLOT = $SLOT$ } }
-			1300 = { halfsade_captives_try_macro_effect = { MACRO = middle_east SLOT = $SLOT$ } }
-			500 = { halfsade_captives_try_macro_effect = { MACRO = central_asia SLOT = $SLOT$ } }
-			50 = { halfsade_captives_try_macro_effect = { MACRO = south_asia SLOT = $SLOT$ } }
-			50 = { halfsade_captives_try_macro_effect = { MACRO = southeast_asia SLOT = $SLOT$ } }
+			5000 = { halfsade_captives_pick_in_europe_effect = { SLOT = $SLOT$ } }
+			2500 = { halfsade_captives_pick_in_africa_effect = { SLOT = $SLOT$ } }
+			1300 = { halfsade_captives_pick_in_middle_east_effect = { SLOT = $SLOT$ } }
+			500 = { halfsade_captives_pick_in_central_asia_effect = { SLOT = $SLOT$ } }
+			50 = { halfsade_captives_pick_in_south_asia_effect = { SLOT = $SLOT$ } }
+			50 = { halfsade_captives_pick_in_southeast_asia_effect = { SLOT = $SLOT$ } }
 		}
 		
-		halfsade_captives_try_macro_effect = { MACRO = europe SLOT = $SLOT$ }
-		halfsade_captives_try_macro_effect = { MACRO = africa SLOT = $SLOT$ }
-		halfsade_captives_try_macro_effect = { MACRO = middle_east SLOT = $SLOT$ }
-		halfsade_captives_try_macro_effect = { MACRO = central_asia SLOT = $SLOT$ }
-		halfsade_captives_try_macro_effect = { MACRO = south_asia SLOT = $SLOT$ }
-		halfsade_captives_try_macro_effect = { MACRO = southeast_asia SLOT = $SLOT$ }
+		halfsade_captives_pick_in_europe_effect = { SLOT = $SLOT$ }
+		halfsade_captives_pick_in_africa_effect = { SLOT = $SLOT$ }
+		halfsade_captives_pick_in_middle_east_effect = { SLOT = $SLOT$ }
+		halfsade_captives_pick_in_central_asia_effect = { SLOT = $SLOT$ }
+		halfsade_captives_pick_in_south_asia_effect = { SLOT = $SLOT$ }
+		halfsade_captives_pick_in_southeast_asia_effect = { SLOT = $SLOT$ }
 	}
 	# home: southeast_asia   weights: europe(d6)=50, africa(d5)=25, middle_east(d4)=13, central_asia(d3)=5, south_asia(d2)=1, east_asia(d1)=0
 	else_if = {
 		limit = { halfsade_captives_in_macro_southeast_asia_trigger = yes }
-		debug_log = "halfsade_captives: slot $SLOT$ home macro detected: southeast_asia"
-		
 		random_list = {
-			5000 = { halfsade_captives_try_macro_effect = { MACRO = europe SLOT = $SLOT$ } }
-			2500 = { halfsade_captives_try_macro_effect = { MACRO = africa SLOT = $SLOT$ } }
-			1300 = { halfsade_captives_try_macro_effect = { MACRO = middle_east SLOT = $SLOT$ } }
-			500 = { halfsade_captives_try_macro_effect = { MACRO = central_asia SLOT = $SLOT$ } }
-			100 = { halfsade_captives_try_macro_effect = { MACRO = south_asia SLOT = $SLOT$ } }
+			5000 = { halfsade_captives_pick_in_europe_effect = { SLOT = $SLOT$ } }
+			2500 = { halfsade_captives_pick_in_africa_effect = { SLOT = $SLOT$ } }
+			1300 = { halfsade_captives_pick_in_middle_east_effect = { SLOT = $SLOT$ } }
+			500 = { halfsade_captives_pick_in_central_asia_effect = { SLOT = $SLOT$ } }
+			100 = { halfsade_captives_pick_in_south_asia_effect = { SLOT = $SLOT$ } }
 		}
 		
-		halfsade_captives_try_macro_effect = { MACRO = europe SLOT = $SLOT$ }
-		halfsade_captives_try_macro_effect = { MACRO = africa SLOT = $SLOT$ }
-		halfsade_captives_try_macro_effect = { MACRO = middle_east SLOT = $SLOT$ }
-		halfsade_captives_try_macro_effect = { MACRO = central_asia SLOT = $SLOT$ }
-		halfsade_captives_try_macro_effect = { MACRO = south_asia SLOT = $SLOT$ }
-		halfsade_captives_try_macro_effect = { MACRO = east_asia SLOT = $SLOT$ }
+		halfsade_captives_pick_in_europe_effect = { SLOT = $SLOT$ }
+		halfsade_captives_pick_in_africa_effect = { SLOT = $SLOT$ }
+		halfsade_captives_pick_in_middle_east_effect = { SLOT = $SLOT$ }
+		halfsade_captives_pick_in_central_asia_effect = { SLOT = $SLOT$ }
+		halfsade_captives_pick_in_south_asia_effect = { SLOT = $SLOT$ }
+		halfsade_captives_pick_in_east_asia_effect = { SLOT = $SLOT$ }
 	}
-	
-	if = {
-		limit = {
-			NOR = {
-				halfsade_captives_in_macro_europe_trigger = yes
-				halfsade_captives_in_macro_africa_trigger = yes
-				halfsade_captives_in_macro_middle_east_trigger = yes
-				halfsade_captives_in_macro_central_asia_trigger = yes
-				halfsade_captives_in_macro_south_asia_trigger = yes
-				halfsade_captives_in_macro_east_asia_trigger = yes
-				halfsade_captives_in_macro_southeast_asia_trigger = yes
-			}
+	else = {
+		random_list = {
+			1 = { halfsade_captives_pick_in_europe_effect = { SLOT = $SLOT$ } }
+			1 = { halfsade_captives_pick_in_africa_effect = { SLOT = $SLOT$ } }
+			1 = { halfsade_captives_pick_in_middle_east_effect = { SLOT = $SLOT$ } }
+			1 = { halfsade_captives_pick_in_central_asia_effect = { SLOT = $SLOT$ } }
+			1 = { halfsade_captives_pick_in_south_asia_effect = { SLOT = $SLOT$ } }
+			1 = { halfsade_captives_pick_in_east_asia_effect = { SLOT = $SLOT$ } }
+			1 = { halfsade_captives_pick_in_southeast_asia_effect = { SLOT = $SLOT$ } }
 		}
-		debug_log = "halfsade_captives: slot $SLOT$ home macro NOT detected - add its region ids to MACROS"
+	}
+}
+
+halfsade_captives_pick_source_effect = {
+	if = {
+		limit = { has_character_flag = halfsade_captives_pick_europe }
+		halfsade_captives_pick_in_europe_effect = { SLOT = $SLOT$ }
+	}
+	if = {
+		limit = { has_character_flag = halfsade_captives_pick_africa }
+		halfsade_captives_pick_in_africa_effect = { SLOT = $SLOT$ }
+	}
+	if = {
+		limit = { has_character_flag = halfsade_captives_pick_middle_east }
+		halfsade_captives_pick_in_middle_east_effect = { SLOT = $SLOT$ }
+	}
+	if = {
+		limit = { has_character_flag = halfsade_captives_pick_central_asia }
+		halfsade_captives_pick_in_central_asia_effect = { SLOT = $SLOT$ }
+	}
+	if = {
+		limit = { has_character_flag = halfsade_captives_pick_south_asia }
+		halfsade_captives_pick_in_south_asia_effect = { SLOT = $SLOT$ }
+	}
+	if = {
+		limit = { has_character_flag = halfsade_captives_pick_east_asia }
+		halfsade_captives_pick_in_east_asia_effect = { SLOT = $SLOT$ }
+	}
+	if = {
+		limit = { has_character_flag = halfsade_captives_pick_southeast_asia }
+		halfsade_captives_pick_in_southeast_asia_effect = { SLOT = $SLOT$ }
 	}
 
-	halfsade_captives_try_any_effect = { SLOT = $SLOT$ }
+	if = {
+		limit = {
+			NOT = { exists = scope:halfsade_far_prov_$SLOT$ }
+		}
+		halfsade_captives_pick_weighted_effect = { SLOT = $SLOT$ }
+	}
+
+	halfsade_captives_pick_in_europe_effect = { SLOT = $SLOT$ }
+	halfsade_captives_pick_in_africa_effect = { SLOT = $SLOT$ }
+	halfsade_captives_pick_in_middle_east_effect = { SLOT = $SLOT$ }
+	halfsade_captives_pick_in_central_asia_effect = { SLOT = $SLOT$ }
+	halfsade_captives_pick_in_south_asia_effect = { SLOT = $SLOT$ }
+	halfsade_captives_pick_in_east_asia_effect = { SLOT = $SLOT$ }
+	halfsade_captives_pick_in_southeast_asia_effect = { SLOT = $SLOT$ }
+
+	halfsade_captives_try_any_county_effect = { SLOT = $SLOT$ }
 
 	if = {
 		limit = {
-			NOT = { exists = scope:halfsade_far_ruler_$SLOT$ }
+			NOT = { exists = scope:halfsade_far_prov_$SLOT$ }
 		}
-		save_scope_as = halfsade_far_ruler_$SLOT$
-		debug_log = "halfsade_captives: slot $SLOT$ fell back to the home culture"
+		capital_province = {
+			save_scope_as = halfsade_far_prov_$SLOT$
+		}
 	}
+}
+
+halfsade_captives_choose_europe_effect = {
+	hidden_effect = {
+		add_character_flag = halfsade_captives_pick_europe
+		if = {
+			limit = { halfsade_captives_in_macro_africa_trigger = yes }
+			trigger_event = { id = halfsade_captives.0003 days = 15 }  # africa -> europe: distance 1
+		}
+		else_if = {
+			limit = { halfsade_captives_in_macro_middle_east_trigger = yes }
+			trigger_event = { id = halfsade_captives.0003 days = 20 }  # middle_east -> europe: distance 2
+		}
+		else_if = {
+			limit = { halfsade_captives_in_macro_central_asia_trigger = yes }
+			trigger_event = { id = halfsade_captives.0003 days = 25 }  # central_asia -> europe: distance 3
+		}
+		else_if = {
+			limit = { halfsade_captives_in_macro_south_asia_trigger = yes }
+			trigger_event = { id = halfsade_captives.0003 days = 30 }  # south_asia -> europe: distance 4
+		}
+		else_if = {
+			limit = { halfsade_captives_in_macro_east_asia_trigger = yes }
+			trigger_event = { id = halfsade_captives.0003 days = 35 }  # east_asia -> europe: distance 5
+		}
+		else_if = {
+			limit = { halfsade_captives_in_macro_southeast_asia_trigger = yes }
+			trigger_event = { id = halfsade_captives.0003 days = 40 }  # southeast_asia -> europe: distance 6
+		}
+		else = {
+			trigger_event = { id = halfsade_captives.0003 days = 20 }
+		}
+	}
+}
+
+halfsade_captives_choose_africa_effect = {
+	hidden_effect = {
+		add_character_flag = halfsade_captives_pick_africa
+		if = {
+			limit = { halfsade_captives_in_macro_europe_trigger = yes }
+			trigger_event = { id = halfsade_captives.0003 days = 15 }  # europe -> africa: distance 1
+		}
+		else_if = {
+			limit = { halfsade_captives_in_macro_middle_east_trigger = yes }
+			trigger_event = { id = halfsade_captives.0003 days = 15 }  # middle_east -> africa: distance 1
+		}
+		else_if = {
+			limit = { halfsade_captives_in_macro_central_asia_trigger = yes }
+			trigger_event = { id = halfsade_captives.0003 days = 20 }  # central_asia -> africa: distance 2
+		}
+		else_if = {
+			limit = { halfsade_captives_in_macro_south_asia_trigger = yes }
+			trigger_event = { id = halfsade_captives.0003 days = 25 }  # south_asia -> africa: distance 3
+		}
+		else_if = {
+			limit = { halfsade_captives_in_macro_east_asia_trigger = yes }
+			trigger_event = { id = halfsade_captives.0003 days = 30 }  # east_asia -> africa: distance 4
+		}
+		else_if = {
+			limit = { halfsade_captives_in_macro_southeast_asia_trigger = yes }
+			trigger_event = { id = halfsade_captives.0003 days = 35 }  # southeast_asia -> africa: distance 5
+		}
+		else = {
+			trigger_event = { id = halfsade_captives.0003 days = 20 }
+		}
+	}
+}
+
+halfsade_captives_choose_middle_east_effect = {
+	hidden_effect = {
+		add_character_flag = halfsade_captives_pick_middle_east
+		if = {
+			limit = { halfsade_captives_in_macro_europe_trigger = yes }
+			trigger_event = { id = halfsade_captives.0003 days = 20 }  # europe -> middle_east: distance 2
+		}
+		else_if = {
+			limit = { halfsade_captives_in_macro_africa_trigger = yes }
+			trigger_event = { id = halfsade_captives.0003 days = 15 }  # africa -> middle_east: distance 1
+		}
+		else_if = {
+			limit = { halfsade_captives_in_macro_central_asia_trigger = yes }
+			trigger_event = { id = halfsade_captives.0003 days = 15 }  # central_asia -> middle_east: distance 1
+		}
+		else_if = {
+			limit = { halfsade_captives_in_macro_south_asia_trigger = yes }
+			trigger_event = { id = halfsade_captives.0003 days = 20 }  # south_asia -> middle_east: distance 2
+		}
+		else_if = {
+			limit = { halfsade_captives_in_macro_east_asia_trigger = yes }
+			trigger_event = { id = halfsade_captives.0003 days = 25 }  # east_asia -> middle_east: distance 3
+		}
+		else_if = {
+			limit = { halfsade_captives_in_macro_southeast_asia_trigger = yes }
+			trigger_event = { id = halfsade_captives.0003 days = 30 }  # southeast_asia -> middle_east: distance 4
+		}
+		else = {
+			trigger_event = { id = halfsade_captives.0003 days = 20 }
+		}
+	}
+}
+
+halfsade_captives_choose_central_asia_effect = {
+	hidden_effect = {
+		add_character_flag = halfsade_captives_pick_central_asia
+		if = {
+			limit = { halfsade_captives_in_macro_europe_trigger = yes }
+			trigger_event = { id = halfsade_captives.0003 days = 25 }  # europe -> central_asia: distance 3
+		}
+		else_if = {
+			limit = { halfsade_captives_in_macro_africa_trigger = yes }
+			trigger_event = { id = halfsade_captives.0003 days = 20 }  # africa -> central_asia: distance 2
+		}
+		else_if = {
+			limit = { halfsade_captives_in_macro_middle_east_trigger = yes }
+			trigger_event = { id = halfsade_captives.0003 days = 15 }  # middle_east -> central_asia: distance 1
+		}
+		else_if = {
+			limit = { halfsade_captives_in_macro_south_asia_trigger = yes }
+			trigger_event = { id = halfsade_captives.0003 days = 15 }  # south_asia -> central_asia: distance 1
+		}
+		else_if = {
+			limit = { halfsade_captives_in_macro_east_asia_trigger = yes }
+			trigger_event = { id = halfsade_captives.0003 days = 20 }  # east_asia -> central_asia: distance 2
+		}
+		else_if = {
+			limit = { halfsade_captives_in_macro_southeast_asia_trigger = yes }
+			trigger_event = { id = halfsade_captives.0003 days = 25 }  # southeast_asia -> central_asia: distance 3
+		}
+		else = {
+			trigger_event = { id = halfsade_captives.0003 days = 20 }
+		}
+	}
+}
+
+halfsade_captives_choose_south_asia_effect = {
+	hidden_effect = {
+		add_character_flag = halfsade_captives_pick_south_asia
+		if = {
+			limit = { halfsade_captives_in_macro_europe_trigger = yes }
+			trigger_event = { id = halfsade_captives.0003 days = 30 }  # europe -> south_asia: distance 4
+		}
+		else_if = {
+			limit = { halfsade_captives_in_macro_africa_trigger = yes }
+			trigger_event = { id = halfsade_captives.0003 days = 25 }  # africa -> south_asia: distance 3
+		}
+		else_if = {
+			limit = { halfsade_captives_in_macro_middle_east_trigger = yes }
+			trigger_event = { id = halfsade_captives.0003 days = 20 }  # middle_east -> south_asia: distance 2
+		}
+		else_if = {
+			limit = { halfsade_captives_in_macro_central_asia_trigger = yes }
+			trigger_event = { id = halfsade_captives.0003 days = 15 }  # central_asia -> south_asia: distance 1
+		}
+		else_if = {
+			limit = { halfsade_captives_in_macro_east_asia_trigger = yes }
+			trigger_event = { id = halfsade_captives.0003 days = 15 }  # east_asia -> south_asia: distance 1
+		}
+		else_if = {
+			limit = { halfsade_captives_in_macro_southeast_asia_trigger = yes }
+			trigger_event = { id = halfsade_captives.0003 days = 20 }  # southeast_asia -> south_asia: distance 2
+		}
+		else = {
+			trigger_event = { id = halfsade_captives.0003 days = 20 }
+		}
+	}
+}
+
+halfsade_captives_choose_east_asia_effect = {
+	hidden_effect = {
+		add_character_flag = halfsade_captives_pick_east_asia
+		if = {
+			limit = { halfsade_captives_in_macro_europe_trigger = yes }
+			trigger_event = { id = halfsade_captives.0003 days = 35 }  # europe -> east_asia: distance 5
+		}
+		else_if = {
+			limit = { halfsade_captives_in_macro_africa_trigger = yes }
+			trigger_event = { id = halfsade_captives.0003 days = 30 }  # africa -> east_asia: distance 4
+		}
+		else_if = {
+			limit = { halfsade_captives_in_macro_middle_east_trigger = yes }
+			trigger_event = { id = halfsade_captives.0003 days = 25 }  # middle_east -> east_asia: distance 3
+		}
+		else_if = {
+			limit = { halfsade_captives_in_macro_central_asia_trigger = yes }
+			trigger_event = { id = halfsade_captives.0003 days = 20 }  # central_asia -> east_asia: distance 2
+		}
+		else_if = {
+			limit = { halfsade_captives_in_macro_south_asia_trigger = yes }
+			trigger_event = { id = halfsade_captives.0003 days = 15 }  # south_asia -> east_asia: distance 1
+		}
+		else_if = {
+			limit = { halfsade_captives_in_macro_southeast_asia_trigger = yes }
+			trigger_event = { id = halfsade_captives.0003 days = 15 }  # southeast_asia -> east_asia: distance 1
+		}
+		else = {
+			trigger_event = { id = halfsade_captives.0003 days = 20 }
+		}
+	}
+}
+
+halfsade_captives_choose_southeast_asia_effect = {
+	hidden_effect = {
+		add_character_flag = halfsade_captives_pick_southeast_asia
+		if = {
+			limit = { halfsade_captives_in_macro_europe_trigger = yes }
+			trigger_event = { id = halfsade_captives.0003 days = 40 }  # europe -> southeast_asia: distance 6
+		}
+		else_if = {
+			limit = { halfsade_captives_in_macro_africa_trigger = yes }
+			trigger_event = { id = halfsade_captives.0003 days = 35 }  # africa -> southeast_asia: distance 5
+		}
+		else_if = {
+			limit = { halfsade_captives_in_macro_middle_east_trigger = yes }
+			trigger_event = { id = halfsade_captives.0003 days = 30 }  # middle_east -> southeast_asia: distance 4
+		}
+		else_if = {
+			limit = { halfsade_captives_in_macro_central_asia_trigger = yes }
+			trigger_event = { id = halfsade_captives.0003 days = 25 }  # central_asia -> southeast_asia: distance 3
+		}
+		else_if = {
+			limit = { halfsade_captives_in_macro_south_asia_trigger = yes }
+			trigger_event = { id = halfsade_captives.0003 days = 20 }  # south_asia -> southeast_asia: distance 2
+		}
+		else_if = {
+			limit = { halfsade_captives_in_macro_east_asia_trigger = yes }
+			trigger_event = { id = halfsade_captives.0003 days = 15 }  # east_asia -> southeast_asia: distance 1
+		}
+		else = {
+			trigger_event = { id = halfsade_captives.0003 days = 20 }
+		}
+	}
+}
+
+halfsade_captives_choose_auto_effect = {
+	hidden_effect = {
+		trigger_event = { id = halfsade_captives.0003 days = 20 }
+	}
+}
+
+halfsade_captives_clear_choice_flags_effect = {
+	remove_character_flag = halfsade_captives_pick_europe
+	remove_character_flag = halfsade_captives_pick_africa
+	remove_character_flag = halfsade_captives_pick_middle_east
+	remove_character_flag = halfsade_captives_pick_central_asia
+	remove_character_flag = halfsade_captives_pick_south_asia
+	remove_character_flag = halfsade_captives_pick_east_asia
+	remove_character_flag = halfsade_captives_pick_southeast_asia
 }

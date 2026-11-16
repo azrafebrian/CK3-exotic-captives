@@ -1,0 +1,571 @@
+﻿namespace = halfsade_captives
+
+halfsade_captives.0002 = {
+	type = character_event
+	title = halfsade_captives.0002.t
+	desc = halfsade_captives.0002.desc
+	theme = diplomacy
+
+	right_portrait = {
+		character = root
+		camera = camera_center_large
+		animation = bribing
+	}
+
+	immediate = {
+		save_scope_as = halfsade_home_ruler
+		halfsade_captives_clear_choice_flags_effect = yes
+	}
+
+	option = {
+		name = halfsade_captives.0002.europe.africa
+		trigger = {
+			halfsade_captives_in_macro_africa_trigger = yes
+			halfsade_captives_option_available_europe_trigger = yes
+		}
+		custom_tooltip = halfsade_captives.0002.europe.tt
+		halfsade_captives_choose_europe_effect = yes
+	}
+
+	option = {
+		name = halfsade_captives.0002.europe.middle_east
+		trigger = {
+			halfsade_captives_in_macro_middle_east_trigger = yes
+			halfsade_captives_option_available_europe_trigger = yes
+		}
+		custom_tooltip = halfsade_captives.0002.europe.tt
+		halfsade_captives_choose_europe_effect = yes
+	}
+
+	option = {
+		name = halfsade_captives.0002.europe.central_asia
+		trigger = {
+			halfsade_captives_in_macro_central_asia_trigger = yes
+			halfsade_captives_option_available_europe_trigger = yes
+		}
+		custom_tooltip = halfsade_captives.0002.europe.tt
+		halfsade_captives_choose_europe_effect = yes
+	}
+
+	option = {
+		name = halfsade_captives.0002.europe.south_asia
+		trigger = {
+			halfsade_captives_in_macro_south_asia_trigger = yes
+			halfsade_captives_option_available_europe_trigger = yes
+		}
+		custom_tooltip = halfsade_captives.0002.europe.tt
+		halfsade_captives_choose_europe_effect = yes
+	}
+
+	option = {
+		name = halfsade_captives.0002.europe.east_asia
+		trigger = {
+			halfsade_captives_in_macro_east_asia_trigger = yes
+			halfsade_captives_option_available_europe_trigger = yes
+		}
+		custom_tooltip = halfsade_captives.0002.europe.tt
+		halfsade_captives_choose_europe_effect = yes
+	}
+
+	option = {
+		name = halfsade_captives.0002.europe.southeast_asia
+		trigger = {
+			halfsade_captives_in_macro_southeast_asia_trigger = yes
+			halfsade_captives_option_available_europe_trigger = yes
+		}
+		custom_tooltip = halfsade_captives.0002.europe.tt
+		halfsade_captives_choose_europe_effect = yes
+	}
+
+	option = {
+		name = halfsade_captives.0002.europe.unknown
+		trigger = {
+			NOR = {
+				halfsade_captives_in_macro_europe_trigger = yes
+				halfsade_captives_in_macro_africa_trigger = yes
+				halfsade_captives_in_macro_middle_east_trigger = yes
+				halfsade_captives_in_macro_central_asia_trigger = yes
+				halfsade_captives_in_macro_south_asia_trigger = yes
+				halfsade_captives_in_macro_east_asia_trigger = yes
+				halfsade_captives_in_macro_southeast_asia_trigger = yes
+			}
+			halfsade_captives_option_available_europe_trigger = yes
+		}
+		custom_tooltip = halfsade_captives.0002.europe.tt
+		halfsade_captives_choose_europe_effect = yes
+	}
+
+	option = {
+		name = halfsade_captives.0002.africa.europe
+		trigger = {
+			halfsade_captives_in_macro_europe_trigger = yes
+			halfsade_captives_option_available_africa_trigger = yes
+		}
+		custom_tooltip = halfsade_captives.0002.africa.tt
+		halfsade_captives_choose_africa_effect = yes
+	}
+
+	option = {
+		name = halfsade_captives.0002.africa.middle_east
+		trigger = {
+			halfsade_captives_in_macro_middle_east_trigger = yes
+			halfsade_captives_option_available_africa_trigger = yes
+		}
+		custom_tooltip = halfsade_captives.0002.africa.tt
+		halfsade_captives_choose_africa_effect = yes
+	}
+
+	option = {
+		name = halfsade_captives.0002.africa.central_asia
+		trigger = {
+			halfsade_captives_in_macro_central_asia_trigger = yes
+			halfsade_captives_option_available_africa_trigger = yes
+		}
+		custom_tooltip = halfsade_captives.0002.africa.tt
+		halfsade_captives_choose_africa_effect = yes
+	}
+
+	option = {
+		name = halfsade_captives.0002.africa.south_asia
+		trigger = {
+			halfsade_captives_in_macro_south_asia_trigger = yes
+			halfsade_captives_option_available_africa_trigger = yes
+		}
+		custom_tooltip = halfsade_captives.0002.africa.tt
+		halfsade_captives_choose_africa_effect = yes
+	}
+
+	option = {
+		name = halfsade_captives.0002.africa.east_asia
+		trigger = {
+			halfsade_captives_in_macro_east_asia_trigger = yes
+			halfsade_captives_option_available_africa_trigger = yes
+		}
+		custom_tooltip = halfsade_captives.0002.africa.tt
+		halfsade_captives_choose_africa_effect = yes
+	}
+
+	option = {
+		name = halfsade_captives.0002.africa.southeast_asia
+		trigger = {
+			halfsade_captives_in_macro_southeast_asia_trigger = yes
+			halfsade_captives_option_available_africa_trigger = yes
+		}
+		custom_tooltip = halfsade_captives.0002.africa.tt
+		halfsade_captives_choose_africa_effect = yes
+	}
+
+	option = {
+		name = halfsade_captives.0002.africa.unknown
+		trigger = {
+			NOR = {
+				halfsade_captives_in_macro_europe_trigger = yes
+				halfsade_captives_in_macro_africa_trigger = yes
+				halfsade_captives_in_macro_middle_east_trigger = yes
+				halfsade_captives_in_macro_central_asia_trigger = yes
+				halfsade_captives_in_macro_south_asia_trigger = yes
+				halfsade_captives_in_macro_east_asia_trigger = yes
+				halfsade_captives_in_macro_southeast_asia_trigger = yes
+			}
+			halfsade_captives_option_available_africa_trigger = yes
+		}
+		custom_tooltip = halfsade_captives.0002.africa.tt
+		halfsade_captives_choose_africa_effect = yes
+	}
+
+	option = {
+		name = halfsade_captives.0002.middle_east.europe
+		trigger = {
+			halfsade_captives_in_macro_europe_trigger = yes
+			halfsade_captives_option_available_middle_east_trigger = yes
+		}
+		custom_tooltip = halfsade_captives.0002.middle_east.tt
+		halfsade_captives_choose_middle_east_effect = yes
+	}
+
+	option = {
+		name = halfsade_captives.0002.middle_east.africa
+		trigger = {
+			halfsade_captives_in_macro_africa_trigger = yes
+			halfsade_captives_option_available_middle_east_trigger = yes
+		}
+		custom_tooltip = halfsade_captives.0002.middle_east.tt
+		halfsade_captives_choose_middle_east_effect = yes
+	}
+
+	option = {
+		name = halfsade_captives.0002.middle_east.central_asia
+		trigger = {
+			halfsade_captives_in_macro_central_asia_trigger = yes
+			halfsade_captives_option_available_middle_east_trigger = yes
+		}
+		custom_tooltip = halfsade_captives.0002.middle_east.tt
+		halfsade_captives_choose_middle_east_effect = yes
+	}
+
+	option = {
+		name = halfsade_captives.0002.middle_east.south_asia
+		trigger = {
+			halfsade_captives_in_macro_south_asia_trigger = yes
+			halfsade_captives_option_available_middle_east_trigger = yes
+		}
+		custom_tooltip = halfsade_captives.0002.middle_east.tt
+		halfsade_captives_choose_middle_east_effect = yes
+	}
+
+	option = {
+		name = halfsade_captives.0002.middle_east.east_asia
+		trigger = {
+			halfsade_captives_in_macro_east_asia_trigger = yes
+			halfsade_captives_option_available_middle_east_trigger = yes
+		}
+		custom_tooltip = halfsade_captives.0002.middle_east.tt
+		halfsade_captives_choose_middle_east_effect = yes
+	}
+
+	option = {
+		name = halfsade_captives.0002.middle_east.southeast_asia
+		trigger = {
+			halfsade_captives_in_macro_southeast_asia_trigger = yes
+			halfsade_captives_option_available_middle_east_trigger = yes
+		}
+		custom_tooltip = halfsade_captives.0002.middle_east.tt
+		halfsade_captives_choose_middle_east_effect = yes
+	}
+
+	option = {
+		name = halfsade_captives.0002.middle_east.unknown
+		trigger = {
+			NOR = {
+				halfsade_captives_in_macro_europe_trigger = yes
+				halfsade_captives_in_macro_africa_trigger = yes
+				halfsade_captives_in_macro_middle_east_trigger = yes
+				halfsade_captives_in_macro_central_asia_trigger = yes
+				halfsade_captives_in_macro_south_asia_trigger = yes
+				halfsade_captives_in_macro_east_asia_trigger = yes
+				halfsade_captives_in_macro_southeast_asia_trigger = yes
+			}
+			halfsade_captives_option_available_middle_east_trigger = yes
+		}
+		custom_tooltip = halfsade_captives.0002.middle_east.tt
+		halfsade_captives_choose_middle_east_effect = yes
+	}
+
+	option = {
+		name = halfsade_captives.0002.central_asia.europe
+		trigger = {
+			halfsade_captives_in_macro_europe_trigger = yes
+			halfsade_captives_option_available_central_asia_trigger = yes
+		}
+		custom_tooltip = halfsade_captives.0002.central_asia.tt
+		halfsade_captives_choose_central_asia_effect = yes
+	}
+
+	option = {
+		name = halfsade_captives.0002.central_asia.africa
+		trigger = {
+			halfsade_captives_in_macro_africa_trigger = yes
+			halfsade_captives_option_available_central_asia_trigger = yes
+		}
+		custom_tooltip = halfsade_captives.0002.central_asia.tt
+		halfsade_captives_choose_central_asia_effect = yes
+	}
+
+	option = {
+		name = halfsade_captives.0002.central_asia.middle_east
+		trigger = {
+			halfsade_captives_in_macro_middle_east_trigger = yes
+			halfsade_captives_option_available_central_asia_trigger = yes
+		}
+		custom_tooltip = halfsade_captives.0002.central_asia.tt
+		halfsade_captives_choose_central_asia_effect = yes
+	}
+
+	option = {
+		name = halfsade_captives.0002.central_asia.south_asia
+		trigger = {
+			halfsade_captives_in_macro_south_asia_trigger = yes
+			halfsade_captives_option_available_central_asia_trigger = yes
+		}
+		custom_tooltip = halfsade_captives.0002.central_asia.tt
+		halfsade_captives_choose_central_asia_effect = yes
+	}
+
+	option = {
+		name = halfsade_captives.0002.central_asia.east_asia
+		trigger = {
+			halfsade_captives_in_macro_east_asia_trigger = yes
+			halfsade_captives_option_available_central_asia_trigger = yes
+		}
+		custom_tooltip = halfsade_captives.0002.central_asia.tt
+		halfsade_captives_choose_central_asia_effect = yes
+	}
+
+	option = {
+		name = halfsade_captives.0002.central_asia.southeast_asia
+		trigger = {
+			halfsade_captives_in_macro_southeast_asia_trigger = yes
+			halfsade_captives_option_available_central_asia_trigger = yes
+		}
+		custom_tooltip = halfsade_captives.0002.central_asia.tt
+		halfsade_captives_choose_central_asia_effect = yes
+	}
+
+	option = {
+		name = halfsade_captives.0002.central_asia.unknown
+		trigger = {
+			NOR = {
+				halfsade_captives_in_macro_europe_trigger = yes
+				halfsade_captives_in_macro_africa_trigger = yes
+				halfsade_captives_in_macro_middle_east_trigger = yes
+				halfsade_captives_in_macro_central_asia_trigger = yes
+				halfsade_captives_in_macro_south_asia_trigger = yes
+				halfsade_captives_in_macro_east_asia_trigger = yes
+				halfsade_captives_in_macro_southeast_asia_trigger = yes
+			}
+			halfsade_captives_option_available_central_asia_trigger = yes
+		}
+		custom_tooltip = halfsade_captives.0002.central_asia.tt
+		halfsade_captives_choose_central_asia_effect = yes
+	}
+
+	option = {
+		name = halfsade_captives.0002.south_asia.europe
+		trigger = {
+			halfsade_captives_in_macro_europe_trigger = yes
+			halfsade_captives_option_available_south_asia_trigger = yes
+		}
+		custom_tooltip = halfsade_captives.0002.south_asia.tt
+		halfsade_captives_choose_south_asia_effect = yes
+	}
+
+	option = {
+		name = halfsade_captives.0002.south_asia.africa
+		trigger = {
+			halfsade_captives_in_macro_africa_trigger = yes
+			halfsade_captives_option_available_south_asia_trigger = yes
+		}
+		custom_tooltip = halfsade_captives.0002.south_asia.tt
+		halfsade_captives_choose_south_asia_effect = yes
+	}
+
+	option = {
+		name = halfsade_captives.0002.south_asia.middle_east
+		trigger = {
+			halfsade_captives_in_macro_middle_east_trigger = yes
+			halfsade_captives_option_available_south_asia_trigger = yes
+		}
+		custom_tooltip = halfsade_captives.0002.south_asia.tt
+		halfsade_captives_choose_south_asia_effect = yes
+	}
+
+	option = {
+		name = halfsade_captives.0002.south_asia.central_asia
+		trigger = {
+			halfsade_captives_in_macro_central_asia_trigger = yes
+			halfsade_captives_option_available_south_asia_trigger = yes
+		}
+		custom_tooltip = halfsade_captives.0002.south_asia.tt
+		halfsade_captives_choose_south_asia_effect = yes
+	}
+
+	option = {
+		name = halfsade_captives.0002.south_asia.east_asia
+		trigger = {
+			halfsade_captives_in_macro_east_asia_trigger = yes
+			halfsade_captives_option_available_south_asia_trigger = yes
+		}
+		custom_tooltip = halfsade_captives.0002.south_asia.tt
+		halfsade_captives_choose_south_asia_effect = yes
+	}
+
+	option = {
+		name = halfsade_captives.0002.south_asia.southeast_asia
+		trigger = {
+			halfsade_captives_in_macro_southeast_asia_trigger = yes
+			halfsade_captives_option_available_south_asia_trigger = yes
+		}
+		custom_tooltip = halfsade_captives.0002.south_asia.tt
+		halfsade_captives_choose_south_asia_effect = yes
+	}
+
+	option = {
+		name = halfsade_captives.0002.south_asia.unknown
+		trigger = {
+			NOR = {
+				halfsade_captives_in_macro_europe_trigger = yes
+				halfsade_captives_in_macro_africa_trigger = yes
+				halfsade_captives_in_macro_middle_east_trigger = yes
+				halfsade_captives_in_macro_central_asia_trigger = yes
+				halfsade_captives_in_macro_south_asia_trigger = yes
+				halfsade_captives_in_macro_east_asia_trigger = yes
+				halfsade_captives_in_macro_southeast_asia_trigger = yes
+			}
+			halfsade_captives_option_available_south_asia_trigger = yes
+		}
+		custom_tooltip = halfsade_captives.0002.south_asia.tt
+		halfsade_captives_choose_south_asia_effect = yes
+	}
+
+	option = {
+		name = halfsade_captives.0002.east_asia.europe
+		trigger = {
+			halfsade_captives_in_macro_europe_trigger = yes
+			halfsade_captives_option_available_east_asia_trigger = yes
+		}
+		custom_tooltip = halfsade_captives.0002.east_asia.tt
+		halfsade_captives_choose_east_asia_effect = yes
+	}
+
+	option = {
+		name = halfsade_captives.0002.east_asia.africa
+		trigger = {
+			halfsade_captives_in_macro_africa_trigger = yes
+			halfsade_captives_option_available_east_asia_trigger = yes
+		}
+		custom_tooltip = halfsade_captives.0002.east_asia.tt
+		halfsade_captives_choose_east_asia_effect = yes
+	}
+
+	option = {
+		name = halfsade_captives.0002.east_asia.middle_east
+		trigger = {
+			halfsade_captives_in_macro_middle_east_trigger = yes
+			halfsade_captives_option_available_east_asia_trigger = yes
+		}
+		custom_tooltip = halfsade_captives.0002.east_asia.tt
+		halfsade_captives_choose_east_asia_effect = yes
+	}
+
+	option = {
+		name = halfsade_captives.0002.east_asia.central_asia
+		trigger = {
+			halfsade_captives_in_macro_central_asia_trigger = yes
+			halfsade_captives_option_available_east_asia_trigger = yes
+		}
+		custom_tooltip = halfsade_captives.0002.east_asia.tt
+		halfsade_captives_choose_east_asia_effect = yes
+	}
+
+	option = {
+		name = halfsade_captives.0002.east_asia.south_asia
+		trigger = {
+			halfsade_captives_in_macro_south_asia_trigger = yes
+			halfsade_captives_option_available_east_asia_trigger = yes
+		}
+		custom_tooltip = halfsade_captives.0002.east_asia.tt
+		halfsade_captives_choose_east_asia_effect = yes
+	}
+
+	option = {
+		name = halfsade_captives.0002.east_asia.southeast_asia
+		trigger = {
+			halfsade_captives_in_macro_southeast_asia_trigger = yes
+			halfsade_captives_option_available_east_asia_trigger = yes
+		}
+		custom_tooltip = halfsade_captives.0002.east_asia.tt
+		halfsade_captives_choose_east_asia_effect = yes
+	}
+
+	option = {
+		name = halfsade_captives.0002.east_asia.unknown
+		trigger = {
+			NOR = {
+				halfsade_captives_in_macro_europe_trigger = yes
+				halfsade_captives_in_macro_africa_trigger = yes
+				halfsade_captives_in_macro_middle_east_trigger = yes
+				halfsade_captives_in_macro_central_asia_trigger = yes
+				halfsade_captives_in_macro_south_asia_trigger = yes
+				halfsade_captives_in_macro_east_asia_trigger = yes
+				halfsade_captives_in_macro_southeast_asia_trigger = yes
+			}
+			halfsade_captives_option_available_east_asia_trigger = yes
+		}
+		custom_tooltip = halfsade_captives.0002.east_asia.tt
+		halfsade_captives_choose_east_asia_effect = yes
+	}
+
+	option = {
+		name = halfsade_captives.0002.southeast_asia.europe
+		trigger = {
+			halfsade_captives_in_macro_europe_trigger = yes
+			halfsade_captives_option_available_southeast_asia_trigger = yes
+		}
+		custom_tooltip = halfsade_captives.0002.southeast_asia.tt
+		halfsade_captives_choose_southeast_asia_effect = yes
+	}
+
+	option = {
+		name = halfsade_captives.0002.southeast_asia.africa
+		trigger = {
+			halfsade_captives_in_macro_africa_trigger = yes
+			halfsade_captives_option_available_southeast_asia_trigger = yes
+		}
+		custom_tooltip = halfsade_captives.0002.southeast_asia.tt
+		halfsade_captives_choose_southeast_asia_effect = yes
+	}
+
+	option = {
+		name = halfsade_captives.0002.southeast_asia.middle_east
+		trigger = {
+			halfsade_captives_in_macro_middle_east_trigger = yes
+			halfsade_captives_option_available_southeast_asia_trigger = yes
+		}
+		custom_tooltip = halfsade_captives.0002.southeast_asia.tt
+		halfsade_captives_choose_southeast_asia_effect = yes
+	}
+
+	option = {
+		name = halfsade_captives.0002.southeast_asia.central_asia
+		trigger = {
+			halfsade_captives_in_macro_central_asia_trigger = yes
+			halfsade_captives_option_available_southeast_asia_trigger = yes
+		}
+		custom_tooltip = halfsade_captives.0002.southeast_asia.tt
+		halfsade_captives_choose_southeast_asia_effect = yes
+	}
+
+	option = {
+		name = halfsade_captives.0002.southeast_asia.south_asia
+		trigger = {
+			halfsade_captives_in_macro_south_asia_trigger = yes
+			halfsade_captives_option_available_southeast_asia_trigger = yes
+		}
+		custom_tooltip = halfsade_captives.0002.southeast_asia.tt
+		halfsade_captives_choose_southeast_asia_effect = yes
+	}
+
+	option = {
+		name = halfsade_captives.0002.southeast_asia.east_asia
+		trigger = {
+			halfsade_captives_in_macro_east_asia_trigger = yes
+			halfsade_captives_option_available_southeast_asia_trigger = yes
+		}
+		custom_tooltip = halfsade_captives.0002.southeast_asia.tt
+		halfsade_captives_choose_southeast_asia_effect = yes
+	}
+
+	option = {
+		name = halfsade_captives.0002.southeast_asia.unknown
+		trigger = {
+			NOR = {
+				halfsade_captives_in_macro_europe_trigger = yes
+				halfsade_captives_in_macro_africa_trigger = yes
+				halfsade_captives_in_macro_middle_east_trigger = yes
+				halfsade_captives_in_macro_central_asia_trigger = yes
+				halfsade_captives_in_macro_south_asia_trigger = yes
+				halfsade_captives_in_macro_east_asia_trigger = yes
+				halfsade_captives_in_macro_southeast_asia_trigger = yes
+			}
+			halfsade_captives_option_available_southeast_asia_trigger = yes
+		}
+		custom_tooltip = halfsade_captives.0002.southeast_asia.tt
+		halfsade_captives_choose_southeast_asia_effect = yes
+	}
+
+	option = {
+		name = halfsade_captives.0002.auto
+		custom_tooltip = halfsade_captives.0002.auto.tt
+		halfsade_captives_choose_auto_effect = yes
+	}
+}
