@@ -7,18 +7,26 @@
 halfsade_captives_stays_trigger = {
 	OR = {
 		is_married = yes
-		is_spouse_of = scope:halfsade_host
-		is_concubine_of = scope:halfsade_host
-		is_councillor_of = scope:halfsade_host
-		has_relation_friend = scope:halfsade_host
-		has_relation_best_friend = scope:halfsade_host
-		has_relation_lover = scope:halfsade_host
-		has_relation_soulmate = scope:halfsade_host
+		is_betrothed = yes
+		is_consort_of = scope:halfsade_host
 		any_child = {
 			OR = {
 				father = scope:halfsade_host
 				mother = scope:halfsade_host
 			}
 		}
+		
+		has_any_court_position = yes
+		is_councillor_of = scope:halfsade_host
+		is_knight = yes
+		# relationships with the ruler
+		has_relation_friend = scope:halfsade_host
+		has_relation_best_friend = scope:halfsade_host
+		has_relation_lover = scope:halfsade_host
+		has_relation_soulmate = scope:halfsade_host
+		has_relation_guardian = scope:halfsade_host
+		has_relation_ward = scope:halfsade_host
+		has_relation_mentor = scope:halfsade_host
+		has_relation_student = scope:halfsade_host
 	}
 }

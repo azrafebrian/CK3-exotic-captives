@@ -1,5 +1,4 @@
-﻿# root gender to captives gender
-halfsade_captives_create_captive_effect = {
+﻿halfsade_captives_create_captive_effect = {
 	if = {
 		limit = {
 			scope:halfsade_home_ruler = { is_male = yes }
@@ -96,7 +95,10 @@ halfsade_captives_welcome_effect = {
 		add_character_modifier = {
 			modifier = halfsade_captives_fine_lineage_modifier
 		}
-		# captives collar
+		# captives leash
+		add_character_modifier = {
+			modifier = halfsade_captives_belongs_modifier
+		}
 		set_variable = { name = halfsade_captives_keeper value = root }
 		trigger_event = {
 			id = halfsade_captives.0011
@@ -106,6 +108,10 @@ halfsade_captives_welcome_effect = {
 	add_character_modifier = {
 		modifier = halfsade_captives_exotic_taste_modifier
 		years = 2
+	}
+	add_character_modifier = {
+		modifier = halfsade_captives_owner_modifier
+		days = 100
 	}
 }
 
@@ -118,13 +124,19 @@ halfsade_captives_release_effect = {
 	scope:halfsade_captive_$SLOT$ = {
 		add_character_modifier = {
 			modifier = halfsade_captives_freed_modifier
+			years = 1
 		}
 		add_character_modifier = {
 			modifier = halfsade_captives_fine_lineage_modifier
 		}
+
 		trigger_event = {
 			id = halfsade_captives.0006
-			days = 365
+			days = 360
+		}
+		trigger_event = {
+			id = halfsade_captives.0012
+			days = 30
 		}
 	}
 	add_character_modifier = {
@@ -157,4 +169,21 @@ halfsade_captives_cleanup_effect = {
 	remove_variable = halfsade_captives_left_1
 	remove_variable = halfsade_captives_left_2
 	remove_variable = halfsade_captives_left_3
+}
+
+halfsade_captives_free_kept_effect = {
+	remove_character_modifier = halfsade_captives_belongs_modifier
+	remove_variable = halfsade_captives_keeper
+	add_character_modifier = {
+		modifier = halfsade_captives_freed_modifier
+		years = 1
+	}
+	trigger_event = {
+		id = halfsade_captives.0006
+		days = 360
+	}
+	trigger_event = {
+		id = halfsade_captives.0012
+		days = 30
+	}
 }

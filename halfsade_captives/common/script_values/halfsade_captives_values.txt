@@ -1,4 +1,4 @@
-﻿# default price = duke rank (200 gold, 250 piety, 250 prestige)
+﻿# default price = duke rank (50 gold, 100 piety, 100 prestige)
 
 # multiplier
 halfsade_captives_cost_multiplier = {
@@ -27,17 +27,17 @@ halfsade_captives_cost_multiplier = {
 }
 
 halfsade_captives_gold_cost = {
-	value = 75
+	value = 50
 	multiply = halfsade_captives_cost_multiplier
 }
 
 halfsade_captives_piety_cost = {
-	value = 250
+	value = 100
 	multiply = halfsade_captives_cost_multiplier
 }
 
 halfsade_captives_prestige_cost = {
-	value = 250
+	value = 100
 	multiply = halfsade_captives_cost_multiplier
 }
 

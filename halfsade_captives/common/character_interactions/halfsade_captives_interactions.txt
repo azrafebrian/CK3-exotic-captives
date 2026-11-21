@@ -1,0 +1,33 @@
+﻿halfsade_captives_free_interaction = {
+	category = interaction_category_vassal
+	desc = halfsade_captives_free_interaction_desc
+	icon = prison
+	interface_priority = 40
+	ai_frequency = 0
+
+	is_shown = {
+		scope:recipient = {
+			has_character_modifier = halfsade_captives_belongs_modifier
+			has_variable = halfsade_captives_keeper
+			var:halfsade_captives_keeper = scope:actor
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		scope:recipient = {
+			is_imprisoned = no
+			is_courtier_of = scope:actor
+		}
+	}
+
+	auto_accept = yes
+
+	on_accept = {
+		scope:actor = {
+			custom_tooltip = halfsade_captives.release_tt
+		}
+		scope:recipient = {
+			halfsade_captives_free_kept_effect = yes
+		}
+	}
+}

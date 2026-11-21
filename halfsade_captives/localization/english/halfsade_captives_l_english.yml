@@ -1,6 +1,6 @@
 ﻿l_english:
  halfsade_captives_summon_decision:0 "Receive Exotic Captives"
- halfsade_captives_summon_decision_tooltip:0 "Merchants bring strangers from far-away lands before your [court|E]. You may keep them, set them free, or return them.
+ halfsade_captives_summon_decision_tooltip:0 "Merchants bring strangers from far-away lands before your [court|E]. You may keep them, set them free, or return them."
  halfsade_captives_summon_decision_desc:0 "Shady merchants from the borderlands have approached my court with a secret offer. They have brought a bound captive from a distant [culture|E], and they are eager to sell this unique outsider to me for the right price."
  halfsade_captives_summon_decision_confirm:0 "Present the Strangers"
  halfsade_captives_summon_decision_effect:0 "In #V 5 days#!, the merchants will be summoned before you to ask where in the world you wish to find strangers for your [court|E]. The farther the land, the longer they will take to return."
@@ -15,7 +15,7 @@
  halfsade_captives.0003.b:0 "Keep only one of them"
  halfsade_captives.0003.c:0 "Set them all free"
  halfsade_captives.0003.d:0 "Send them back to their captivity"
- halfsade_captives.release_tt:0 "The freed strangerswill stay at your [court|E] for now, but will ask to leave after a year unless something ties them to you."
+ halfsade_captives.release_tt:0 "The freed strangers will stay at your [court|E] for now, but will ask to leave after a year unless something ties them to you."
 
  # --- Event 0004 ---
  halfsade_captives.0004.t:0 "Two Strangers Remain"
@@ -68,6 +68,11 @@
  halfsade_captives_exotic_taste_modifier_desc:0 "Word has spread that this ruler keeps strangers from distant lands at [court|E], and some find it improper."
  halfsade_captives_freed_modifier:0 "Freed Captive"
  halfsade_captives_freed_modifier_desc:0 "Freed from captivity, this person is grateful and well liked, but is free to leave and will do so unless something keeps them here."
+ halfsade_captives_belongs_modifier:0 "Belongs to Another"
+ halfsade_captives_belongs_modifier_desc:0 "Taken in as a captive, this person belongs to the ruler who claimed them. They remain bound to that ruler until their owner dies or sets them free."
+ halfsade_captives_owner_modifier:0 "Keeper of Strangers"
+ halfsade_captives_owner_modifier_desc:0 "This ruler holds strangers from distant lands at [court|E] as their own."
  halfsade_captives_fine_lineage_modifier:0 "Exceptional Lineage"
  halfsade_captives_fine_lineage_modifier_desc:0 "Taken for a distinguish features, this person's children are more likely to inherit favorable traits."
- 
+ halfsade_captives_free_interaction:0 "Set Captive Free"
+ halfsade_captives_free_interaction_desc:0 "Release this person from your ownership."

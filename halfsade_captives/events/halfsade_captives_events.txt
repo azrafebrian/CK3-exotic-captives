@@ -6,6 +6,8 @@ halfsade_captives.0001 = {
 	hidden = yes
 
 	immediate = {
+		halfsade_captives_cleanup_effect = yes
+
 		send_interface_toast = {
 			title = halfsade_captives.0001.toast
 			custom_tooltip = halfsade_captives.0001.toast_desc
@@ -264,7 +266,7 @@ halfsade_captives.0009 = {
 halfsade_captives.0010 = {
 	type = character_event
 	title = halfsade_captives.0010.t
-	desc = halfsade_captives.0010.cesc
+	desc = halfsade_captives.0010.desc
 	theme = prison
 
 	left_portrait = {
@@ -313,7 +315,7 @@ halfsade_captives.0005 = {
 	desc = halfsade_captives.0005.desc
 	theme = prison
 
-	lower_center_portrait = {
+	right_portrait = {
 		character = scope:halfsade_captive_1
 		animation = prisonhouse
 	}
@@ -371,7 +373,7 @@ halfsade_captives.0006 = {
 	}
 }
 
-# captives leaving
+# captives freed
 halfsade_captives.0007 = {
 	type = character_event
 	title = halfsade_captives.0007.t
@@ -419,24 +421,77 @@ halfsade_captives.0011 = {
 	hidden = yes
 
 	trigger = {
-		has_variable = halfsade_captives_keeper
-		var:halfsade_captives_keeper = { is_alive = yes }
+		has_character_modifier = halfsade_captives_belongs_modifier
 	}
 
 	immediate = {
-		var:halfsade_captives_keeper = { save_scope_as = halfsade_keeper }
 		if = {
 			limit = {
-				NOT = { is_courtier_of = scope:halfsade_keeper }
-				is_imprisoned = no
-				is_ruler = no
-				is_married = no
+				has_variable = halfsade_captives_keeper
+				var:halfsade_captives_keeper = { is_alive = yes }
 			}
-			scope:halfsade_keeper = { add_courtier = root }
+			var:halfsade_captives_keeper = { save_scope_as = halfsade_keeper }
+			if = {
+				limit = { is_spouse_of = scope:halfsade_keeper }
+
+				remove_character_modifier = halfsade_captives_belongs_modifier
+				remove_variable = halfsade_captives_keeper
+			}
+			else = {
+				if = {
+					limit = {
+						NOT = { is_courtier_of = scope:halfsade_keeper }
+						is_imprisoned = no
+						is_ruler = no
+						is_married = no
+					}
+					scope:halfsade_keeper = { add_courtier = root }
+				}
+				scope:halfsade_keeper = {
+					add_character_modifier = {
+						modifier = halfsade_captives_owner_modifier
+						days = 100
+					}
+				}
+				trigger_event = {
+					id = halfsade_captives.0011
+					days = 30
+				}
+			}
 		}
-		trigger_event = {
-			id = halfsade_captives.0011
-			days = 90
+		else = {
+			remove_character_modifier = halfsade_captives_belongs_modifier
+			remove_variable = halfsade_captives_keeper
+		}
+	}
+}
+
+halfsade_captives.0012 = {
+	type = character_event
+	hidden = yes
+
+	trigger = {
+		has_character_modifier = halfsade_captives_freed_modifier
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				is_married = yes
+				exists = court_owner
+			}
+			court_owner = { save_scope_as = halfsade_host }
+			if = {
+				limit = { is_spouse_of = scope:halfsade_host }
+				remove_character_modifier = halfsade_captives_freed_modifier
+			}
+		}
+		if = {
+			limit = { has_character_modifier = halfsade_captives_freed_modifier }
+			trigger_event = {
+				id = halfsade_captives.0012
+				days = 30
+			}
 		}
 	}
 }

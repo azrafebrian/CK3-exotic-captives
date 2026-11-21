@@ -1,12 +1,11 @@
-﻿# captive modifier - court
+﻿# captive modifier - far away
 halfsade_captives_far_from_home_modifier = {
 	icon = travel_negative
 	stress_gain_mult = 0.2
-	general_opinion = -5
 	diplomacy = -1
 }
 
-# root modifier
+# root modifier - taste
 halfsade_captives_exotic_taste_modifier = {
 	icon = grandeur_negative
 	courtier_and_guest_opinion = -5
@@ -24,4 +23,20 @@ halfsade_captives_fine_lineage_modifier = {
 halfsade_captives_freed_modifier = {
 	icon = hostage_positive
 	general_opinion = 10
+}
+
+# captive modifier - leash
+halfsade_captives_belongs_modifier = {
+	icon = wit_negative
+	stress_gain_mult = 0.15
+	monthly_prestige = -0.5
+	general_opinion = -15
+}
+
+# root modifier - owner
+halfsade_captives_owner_modifier = {
+	icon = wit_mixed
+	dread_baseline_add = 5
+	clergy_opinion = -10
+	monthly_piety = -0.2
 }

@@ -47,15 +47,14 @@ Adds Receive Exotic Captives decision, allowing you to get a character from far-
 3. 10% chance of presented characters having good inheritable traits.
 4. 15% chance of presented characters are noble blood.
 
-### Changelog (Update 1.2)
+### Changelog (Update 1.3)
 
-1. Compatibility update with game version 1.21.
-2. Re-work on captive selector, now able to decide each captives fate, one by one.
-3. Added a new options to set them free, unlike taken in captives, they are free to leave the court.
-4. Freed captives are leaving the court after 1 year if they aren't tied.
-5. Taken in captives now on a leash, force return them if they wander out of your court..
-6. Added new modifier for freed captives.
-7. Adjusting cost mechanism, decision cost is base cost, seperate cost for captives taken in or freed.
-8. Lowering base cost to 75 gold (default price).
-
+1. Adjusted base cost value to 50 gold, 100 prestige, 100 piety.
+2. Adjusted root and captives modifiers.
+3. Added expiry time for some modifiers.
+4. Added character interaction: Set Free Captives.
+    
+- Fixed some text errors in localization.
+- Fixed bug where captive modifier not get removed.
+- Fixed character position in event.
 - New update thumbnail.
