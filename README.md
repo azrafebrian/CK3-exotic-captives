@@ -22,11 +22,12 @@ Adds Receive Exotic Captives decision, allowing you to get a character from far-
 ### Features
 
 1. Receive Exotic Captives decision that brings a few characters from far-away lands to your court. Located in personal decision group.
-2. Take all of the presented characters, pick only one, or return them.
+2. Take all of the presented characters, take them in, free them, or return them.
 
 ### Requirements
 
-Cost based on your title rank
+1. Base decision cost depends on your title rank.
+2. Captives cost depends on travel length / how far the captives are brought.
 
 ### Effects
 
@@ -46,16 +47,15 @@ Cost based on your title rank
 3. 10% chance of presented characters having good inheritable traits.
 4. 15% chance of presented characters are noble blood.
 
-### Changelog (Update 1.1)
+### Changelog (Update 1.2)
 
-1. Region Selector: Select which region the captives are taken from.
-2. Price Scaling: Costs are now adjusted depending on your title rank.
-3. Added a chance for captured captives to be of noble blood.
-4. Added a modifier for captives, increasing the chance of their children having a good trait.
-5. Adjusted the duration it takes for merchants to retrieve your captives.
-6. Adjusted captives weight.
+1. Compatibility update with game version 1.21.
+2. Re-work on captive selector, now able to decide each captives fate, one by one.
+3. Added a new options to set them free, unlike taken in captives, they are free to leave the court.
+4. Freed captives are leaving the court after 1 year if they aren't tied.
+5. Taken in captives now on a leash, force return them if they wander out of your court..
+6. Added new modifier for freed captives.
+7. Adjusting cost mechanism, decision cost is base cost, seperate cost for captives taken in or freed.
+8. Lowering base cost to 75 gold (default price).
 
-- Fixed several text errors.
-- Fixed highlighted words.
-- Fixed issues with regions and sub-regions.
 - New update thumbnail.

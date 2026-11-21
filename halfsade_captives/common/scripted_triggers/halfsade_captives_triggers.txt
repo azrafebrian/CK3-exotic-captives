@@ -3,3 +3,22 @@
 		NOT = { culture = scope:halfsade_home_ruler.culture }
 	}
 }
+
+halfsade_captives_stays_trigger = {
+	OR = {
+		is_married = yes
+		is_spouse_of = scope:halfsade_host
+		is_concubine_of = scope:halfsade_host
+		is_councillor_of = scope:halfsade_host
+		has_relation_friend = scope:halfsade_host
+		has_relation_best_friend = scope:halfsade_host
+		has_relation_lover = scope:halfsade_host
+		has_relation_soulmate = scope:halfsade_host
+		any_child = {
+			OR = {
+				father = scope:halfsade_host
+				mother = scope:halfsade_host
+			}
+		}
+	}
+}

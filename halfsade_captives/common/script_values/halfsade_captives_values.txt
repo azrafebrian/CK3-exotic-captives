@@ -27,7 +27,7 @@ halfsade_captives_cost_multiplier = {
 }
 
 halfsade_captives_gold_cost = {
-	value = 200
+	value = 75
 	multiply = halfsade_captives_cost_multiplier
 }
 
@@ -39,4 +39,30 @@ halfsade_captives_piety_cost = {
 halfsade_captives_prestige_cost = {
 	value = 250
 	multiply = halfsade_captives_cost_multiplier
+}
+
+halfsade_captives_gold_per_day = 2
+
+halfsade_captives_captive_price = {
+	value = var:halfsade_captives_travel_days
+	if = {
+		limit = { NOT = { has_variable = halfsade_captives_travel_days } }
+		add = 20
+	}
+	multiply = halfsade_captives_gold_per_day
+	multiply = halfsade_captives_cost_multiplier
+}
+
+halfsade_captives_price_1 = {
+	value = halfsade_captives_captive_price
+}
+
+halfsade_captives_price_2 = {
+	value = halfsade_captives_captive_price
+	multiply = 2
+}
+
+halfsade_captives_price_3 = {
+	value = halfsade_captives_captive_price
+	multiply = 3
 }

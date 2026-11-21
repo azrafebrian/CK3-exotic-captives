@@ -388,29 +388,36 @@ halfsade_captives_choose_europe_effect = {
 		add_character_flag = halfsade_captives_pick_europe
 		if = {
 			limit = { halfsade_captives_in_macro_africa_trigger = yes }
+			set_variable = { name = halfsade_captives_travel_days value = 15 }
 			trigger_event = { id = halfsade_captives.0003 days = 15 }  # africa -> europe: distance 1
 		}
 		else_if = {
 			limit = { halfsade_captives_in_macro_middle_east_trigger = yes }
+			set_variable = { name = halfsade_captives_travel_days value = 20 }
 			trigger_event = { id = halfsade_captives.0003 days = 20 }  # middle_east -> europe: distance 2
 		}
 		else_if = {
 			limit = { halfsade_captives_in_macro_central_asia_trigger = yes }
+			set_variable = { name = halfsade_captives_travel_days value = 25 }
 			trigger_event = { id = halfsade_captives.0003 days = 25 }  # central_asia -> europe: distance 3
 		}
 		else_if = {
 			limit = { halfsade_captives_in_macro_south_asia_trigger = yes }
+			set_variable = { name = halfsade_captives_travel_days value = 30 }
 			trigger_event = { id = halfsade_captives.0003 days = 30 }  # south_asia -> europe: distance 4
 		}
 		else_if = {
 			limit = { halfsade_captives_in_macro_east_asia_trigger = yes }
+			set_variable = { name = halfsade_captives_travel_days value = 35 }
 			trigger_event = { id = halfsade_captives.0003 days = 35 }  # east_asia -> europe: distance 5
 		}
 		else_if = {
 			limit = { halfsade_captives_in_macro_southeast_asia_trigger = yes }
+			set_variable = { name = halfsade_captives_travel_days value = 40 }
 			trigger_event = { id = halfsade_captives.0003 days = 40 }  # southeast_asia -> europe: distance 6
 		}
 		else = {
+			set_variable = { name = halfsade_captives_travel_days value = 20 }
 			trigger_event = { id = halfsade_captives.0003 days = 20 }
 		}
 	}
@@ -421,29 +428,36 @@ halfsade_captives_choose_africa_effect = {
 		add_character_flag = halfsade_captives_pick_africa
 		if = {
 			limit = { halfsade_captives_in_macro_europe_trigger = yes }
+			set_variable = { name = halfsade_captives_travel_days value = 15 }
 			trigger_event = { id = halfsade_captives.0003 days = 15 }  # europe -> africa: distance 1
 		}
 		else_if = {
 			limit = { halfsade_captives_in_macro_middle_east_trigger = yes }
+			set_variable = { name = halfsade_captives_travel_days value = 15 }
 			trigger_event = { id = halfsade_captives.0003 days = 15 }  # middle_east -> africa: distance 1
 		}
 		else_if = {
 			limit = { halfsade_captives_in_macro_central_asia_trigger = yes }
+			set_variable = { name = halfsade_captives_travel_days value = 20 }
 			trigger_event = { id = halfsade_captives.0003 days = 20 }  # central_asia -> africa: distance 2
 		}
 		else_if = {
 			limit = { halfsade_captives_in_macro_south_asia_trigger = yes }
+			set_variable = { name = halfsade_captives_travel_days value = 25 }
 			trigger_event = { id = halfsade_captives.0003 days = 25 }  # south_asia -> africa: distance 3
 		}
 		else_if = {
 			limit = { halfsade_captives_in_macro_east_asia_trigger = yes }
+			set_variable = { name = halfsade_captives_travel_days value = 30 }
 			trigger_event = { id = halfsade_captives.0003 days = 30 }  # east_asia -> africa: distance 4
 		}
 		else_if = {
 			limit = { halfsade_captives_in_macro_southeast_asia_trigger = yes }
+			set_variable = { name = halfsade_captives_travel_days value = 35 }
 			trigger_event = { id = halfsade_captives.0003 days = 35 }  # southeast_asia -> africa: distance 5
 		}
 		else = {
+			set_variable = { name = halfsade_captives_travel_days value = 20 }
 			trigger_event = { id = halfsade_captives.0003 days = 20 }
 		}
 	}
@@ -454,29 +468,36 @@ halfsade_captives_choose_middle_east_effect = {
 		add_character_flag = halfsade_captives_pick_middle_east
 		if = {
 			limit = { halfsade_captives_in_macro_europe_trigger = yes }
+			set_variable = { name = halfsade_captives_travel_days value = 20 }
 			trigger_event = { id = halfsade_captives.0003 days = 20 }  # europe -> middle_east: distance 2
 		}
 		else_if = {
 			limit = { halfsade_captives_in_macro_africa_trigger = yes }
+			set_variable = { name = halfsade_captives_travel_days value = 15 }
 			trigger_event = { id = halfsade_captives.0003 days = 15 }  # africa -> middle_east: distance 1
 		}
 		else_if = {
 			limit = { halfsade_captives_in_macro_central_asia_trigger = yes }
+			set_variable = { name = halfsade_captives_travel_days value = 15 }
 			trigger_event = { id = halfsade_captives.0003 days = 15 }  # central_asia -> middle_east: distance 1
 		}
 		else_if = {
 			limit = { halfsade_captives_in_macro_south_asia_trigger = yes }
+			set_variable = { name = halfsade_captives_travel_days value = 20 }
 			trigger_event = { id = halfsade_captives.0003 days = 20 }  # south_asia -> middle_east: distance 2
 		}
 		else_if = {
 			limit = { halfsade_captives_in_macro_east_asia_trigger = yes }
+			set_variable = { name = halfsade_captives_travel_days value = 25 }
 			trigger_event = { id = halfsade_captives.0003 days = 25 }  # east_asia -> middle_east: distance 3
 		}
 		else_if = {
 			limit = { halfsade_captives_in_macro_southeast_asia_trigger = yes }
+			set_variable = { name = halfsade_captives_travel_days value = 30 }
 			trigger_event = { id = halfsade_captives.0003 days = 30 }  # southeast_asia -> middle_east: distance 4
 		}
 		else = {
+			set_variable = { name = halfsade_captives_travel_days value = 20 }
 			trigger_event = { id = halfsade_captives.0003 days = 20 }
 		}
 	}
@@ -487,29 +508,36 @@ halfsade_captives_choose_central_asia_effect = {
 		add_character_flag = halfsade_captives_pick_central_asia
 		if = {
 			limit = { halfsade_captives_in_macro_europe_trigger = yes }
+			set_variable = { name = halfsade_captives_travel_days value = 25 }
 			trigger_event = { id = halfsade_captives.0003 days = 25 }  # europe -> central_asia: distance 3
 		}
 		else_if = {
 			limit = { halfsade_captives_in_macro_africa_trigger = yes }
+			set_variable = { name = halfsade_captives_travel_days value = 20 }
 			trigger_event = { id = halfsade_captives.0003 days = 20 }  # africa -> central_asia: distance 2
 		}
 		else_if = {
 			limit = { halfsade_captives_in_macro_middle_east_trigger = yes }
+			set_variable = { name = halfsade_captives_travel_days value = 15 }
 			trigger_event = { id = halfsade_captives.0003 days = 15 }  # middle_east -> central_asia: distance 1
 		}
 		else_if = {
 			limit = { halfsade_captives_in_macro_south_asia_trigger = yes }
+			set_variable = { name = halfsade_captives_travel_days value = 15 }
 			trigger_event = { id = halfsade_captives.0003 days = 15 }  # south_asia -> central_asia: distance 1
 		}
 		else_if = {
 			limit = { halfsade_captives_in_macro_east_asia_trigger = yes }
+			set_variable = { name = halfsade_captives_travel_days value = 20 }
 			trigger_event = { id = halfsade_captives.0003 days = 20 }  # east_asia -> central_asia: distance 2
 		}
 		else_if = {
 			limit = { halfsade_captives_in_macro_southeast_asia_trigger = yes }
+			set_variable = { name = halfsade_captives_travel_days value = 25 }
 			trigger_event = { id = halfsade_captives.0003 days = 25 }  # southeast_asia -> central_asia: distance 3
 		}
 		else = {
+			set_variable = { name = halfsade_captives_travel_days value = 20 }
 			trigger_event = { id = halfsade_captives.0003 days = 20 }
 		}
 	}
@@ -520,29 +548,36 @@ halfsade_captives_choose_south_asia_effect = {
 		add_character_flag = halfsade_captives_pick_south_asia
 		if = {
 			limit = { halfsade_captives_in_macro_europe_trigger = yes }
+			set_variable = { name = halfsade_captives_travel_days value = 30 }
 			trigger_event = { id = halfsade_captives.0003 days = 30 }  # europe -> south_asia: distance 4
 		}
 		else_if = {
 			limit = { halfsade_captives_in_macro_africa_trigger = yes }
+			set_variable = { name = halfsade_captives_travel_days value = 25 }
 			trigger_event = { id = halfsade_captives.0003 days = 25 }  # africa -> south_asia: distance 3
 		}
 		else_if = {
 			limit = { halfsade_captives_in_macro_middle_east_trigger = yes }
+			set_variable = { name = halfsade_captives_travel_days value = 20 }
 			trigger_event = { id = halfsade_captives.0003 days = 20 }  # middle_east -> south_asia: distance 2
 		}
 		else_if = {
 			limit = { halfsade_captives_in_macro_central_asia_trigger = yes }
+			set_variable = { name = halfsade_captives_travel_days value = 15 }
 			trigger_event = { id = halfsade_captives.0003 days = 15 }  # central_asia -> south_asia: distance 1
 		}
 		else_if = {
 			limit = { halfsade_captives_in_macro_east_asia_trigger = yes }
+			set_variable = { name = halfsade_captives_travel_days value = 15 }
 			trigger_event = { id = halfsade_captives.0003 days = 15 }  # east_asia -> south_asia: distance 1
 		}
 		else_if = {
 			limit = { halfsade_captives_in_macro_southeast_asia_trigger = yes }
+			set_variable = { name = halfsade_captives_travel_days value = 20 }
 			trigger_event = { id = halfsade_captives.0003 days = 20 }  # southeast_asia -> south_asia: distance 2
 		}
 		else = {
+			set_variable = { name = halfsade_captives_travel_days value = 20 }
 			trigger_event = { id = halfsade_captives.0003 days = 20 }
 		}
 	}
@@ -553,29 +588,36 @@ halfsade_captives_choose_east_asia_effect = {
 		add_character_flag = halfsade_captives_pick_east_asia
 		if = {
 			limit = { halfsade_captives_in_macro_europe_trigger = yes }
+			set_variable = { name = halfsade_captives_travel_days value = 35 }
 			trigger_event = { id = halfsade_captives.0003 days = 35 }  # europe -> east_asia: distance 5
 		}
 		else_if = {
 			limit = { halfsade_captives_in_macro_africa_trigger = yes }
+			set_variable = { name = halfsade_captives_travel_days value = 30 }
 			trigger_event = { id = halfsade_captives.0003 days = 30 }  # africa -> east_asia: distance 4
 		}
 		else_if = {
 			limit = { halfsade_captives_in_macro_middle_east_trigger = yes }
+			set_variable = { name = halfsade_captives_travel_days value = 25 }
 			trigger_event = { id = halfsade_captives.0003 days = 25 }  # middle_east -> east_asia: distance 3
 		}
 		else_if = {
 			limit = { halfsade_captives_in_macro_central_asia_trigger = yes }
+			set_variable = { name = halfsade_captives_travel_days value = 20 }
 			trigger_event = { id = halfsade_captives.0003 days = 20 }  # central_asia -> east_asia: distance 2
 		}
 		else_if = {
 			limit = { halfsade_captives_in_macro_south_asia_trigger = yes }
+			set_variable = { name = halfsade_captives_travel_days value = 15 }
 			trigger_event = { id = halfsade_captives.0003 days = 15 }  # south_asia -> east_asia: distance 1
 		}
 		else_if = {
 			limit = { halfsade_captives_in_macro_southeast_asia_trigger = yes }
+			set_variable = { name = halfsade_captives_travel_days value = 15 }
 			trigger_event = { id = halfsade_captives.0003 days = 15 }  # southeast_asia -> east_asia: distance 1
 		}
 		else = {
+			set_variable = { name = halfsade_captives_travel_days value = 20 }
 			trigger_event = { id = halfsade_captives.0003 days = 20 }
 		}
 	}
@@ -586,29 +628,36 @@ halfsade_captives_choose_southeast_asia_effect = {
 		add_character_flag = halfsade_captives_pick_southeast_asia
 		if = {
 			limit = { halfsade_captives_in_macro_europe_trigger = yes }
+			set_variable = { name = halfsade_captives_travel_days value = 40 }
 			trigger_event = { id = halfsade_captives.0003 days = 40 }  # europe -> southeast_asia: distance 6
 		}
 		else_if = {
 			limit = { halfsade_captives_in_macro_africa_trigger = yes }
+			set_variable = { name = halfsade_captives_travel_days value = 35 }
 			trigger_event = { id = halfsade_captives.0003 days = 35 }  # africa -> southeast_asia: distance 5
 		}
 		else_if = {
 			limit = { halfsade_captives_in_macro_middle_east_trigger = yes }
+			set_variable = { name = halfsade_captives_travel_days value = 30 }
 			trigger_event = { id = halfsade_captives.0003 days = 30 }  # middle_east -> southeast_asia: distance 4
 		}
 		else_if = {
 			limit = { halfsade_captives_in_macro_central_asia_trigger = yes }
+			set_variable = { name = halfsade_captives_travel_days value = 25 }
 			trigger_event = { id = halfsade_captives.0003 days = 25 }  # central_asia -> southeast_asia: distance 3
 		}
 		else_if = {
 			limit = { halfsade_captives_in_macro_south_asia_trigger = yes }
+			set_variable = { name = halfsade_captives_travel_days value = 20 }
 			trigger_event = { id = halfsade_captives.0003 days = 20 }  # south_asia -> southeast_asia: distance 2
 		}
 		else_if = {
 			limit = { halfsade_captives_in_macro_east_asia_trigger = yes }
+			set_variable = { name = halfsade_captives_travel_days value = 15 }
 			trigger_event = { id = halfsade_captives.0003 days = 15 }  # east_asia -> southeast_asia: distance 1
 		}
 		else = {
+			set_variable = { name = halfsade_captives_travel_days value = 20 }
 			trigger_event = { id = halfsade_captives.0003 days = 20 }
 		}
 	}
@@ -616,6 +665,7 @@ halfsade_captives_choose_southeast_asia_effect = {
 
 halfsade_captives_choose_auto_effect = {
 	hidden_effect = {
+		set_variable = { name = halfsade_captives_travel_days value = 20 }
 		trigger_event = { id = halfsade_captives.0003 days = 20 }
 	}
 }

@@ -40,51 +40,403 @@ halfsade_captives.0003 = {
 	immediate = {
 		save_scope_as = halfsade_home_ruler
 
-		halfsade_captives_pick_source_effect = { SLOT = 1 }
-		halfsade_captives_pick_source_effect = { SLOT = 2 }
-		halfsade_captives_pick_source_effect = { SLOT = 3 }
-		halfsade_captives_clear_choice_flags_effect = yes
+		if = {
+			limit = { NOT = { has_variable = halfsade_captives_left_1 } }
 
-		halfsade_captives_create_captive_effect = { SLOT = 1 }
-		halfsade_captives_create_captive_effect = { SLOT = 2 }
-		halfsade_captives_create_captive_effect = { SLOT = 3 }
+			halfsade_captives_pick_source_effect = { SLOT = 1 }
+			halfsade_captives_pick_source_effect = { SLOT = 2 }
+			halfsade_captives_pick_source_effect = { SLOT = 3 }
+			halfsade_captives_clear_choice_flags_effect = yes
+
+			halfsade_captives_create_captive_effect = { SLOT = 1 }
+			halfsade_captives_create_captive_effect = { SLOT = 2 }
+			halfsade_captives_create_captive_effect = { SLOT = 3 }
+
+			set_variable = { name = halfsade_captives_left_1 value = scope:halfsade_captive_1 }
+			set_variable = { name = halfsade_captives_left_2 value = scope:halfsade_captive_2 }
+			set_variable = { name = halfsade_captives_left_3 value = scope:halfsade_captive_3 }
+		}
+		else = {
+			var:halfsade_captives_left_1 = { save_scope_as = halfsade_captive_1 }
+			var:halfsade_captives_left_2 = { save_scope_as = halfsade_captive_2 }
+			var:halfsade_captives_left_3 = { save_scope_as = halfsade_captive_3 }
+		}
 	}
 
 	option = {
 		name = halfsade_captives.0003.a
+		trigger = { short_term_gold >= halfsade_captives_price_3 }
+		show_as_unavailable = { always = yes }
+		halfsade_captives_pay_effect = { COUNT = 3 }
 		halfsade_captives_welcome_effect = { SLOT = 1 }
 		halfsade_captives_welcome_effect = { SLOT = 2 }
 		halfsade_captives_welcome_effect = { SLOT = 3 }
+		halfsade_captives_cleanup_effect = yes
 	}
 
 	option = {
 		name = halfsade_captives.0003.b
-		custom_tooltip = halfsade_captives.0003.others_return
-		halfsade_captives_welcome_effect = { SLOT = 1 }
-		halfsade_captives_send_home_effect = { SLOT = 2 }
-		halfsade_captives_send_home_effect = { SLOT = 3 }
+		trigger_event = halfsade_captives.0008
 	}
 
 	option = {
 		name = halfsade_captives.0003.c
-		custom_tooltip = halfsade_captives.0003.others_return
-		halfsade_captives_welcome_effect = { SLOT = 2 }
-		halfsade_captives_send_home_effect = { SLOT = 1 }
-		halfsade_captives_send_home_effect = { SLOT = 3 }
+		trigger = { short_term_gold >= halfsade_captives_price_3 }
+		show_as_unavailable = { always = yes }
+		halfsade_captives_pay_effect = { COUNT = 3 }
+		custom_tooltip = halfsade_captives.release_tt
+		halfsade_captives_release_effect = { SLOT = 1 }
+		halfsade_captives_release_effect = { SLOT = 2 }
+		halfsade_captives_release_effect = { SLOT = 3 }
+		halfsade_captives_cleanup_effect = yes
 	}
 
 	option = {
 		name = halfsade_captives.0003.d
-		custom_tooltip = halfsade_captives.0003.others_return
-		halfsade_captives_welcome_effect = { SLOT = 3 }
-		halfsade_captives_send_home_effect = { SLOT = 1 }
-		halfsade_captives_send_home_effect = { SLOT = 2 }
-	}
-
-	option = {
-		name = halfsade_captives.0003.e
 		halfsade_captives_send_home_effect = { SLOT = 1 }
 		halfsade_captives_send_home_effect = { SLOT = 2 }
 		halfsade_captives_send_home_effect = { SLOT = 3 }
+		halfsade_captives_cleanup_effect = yes
+	}
+}
+
+halfsade_captives.0008 = {
+	type = character_event
+	title = halfsade_captives.0008.t
+	desc = halfsade_captives.0008.desc
+	theme = prison
+
+	left_portrait = {
+		character = scope:halfsade_captive_1
+		animation = prisonhouse
+	}
+	lower_center_portrait = {
+		character = scope:halfsade_captive_2
+		animation = prisonhouse
+	}
+	right_portrait = {
+		character = scope:halfsade_captive_3
+		animation = prisonhouse
+	}
+
+	immediate = {
+		var:halfsade_captives_left_1 = { save_scope_as = halfsade_captive_1 }
+		var:halfsade_captives_left_2 = { save_scope_as = halfsade_captive_2 }
+		var:halfsade_captives_left_3 = { save_scope_as = halfsade_captive_3 }
+	}
+
+	option = {
+		name = halfsade_captives.0008.a
+		trigger = { short_term_gold >= halfsade_captives_price_1 }
+		show_as_unavailable = { always = yes }
+		halfsade_captives_pay_effect = { COUNT = 1 }
+		halfsade_captives_welcome_effect = { SLOT = 1 }
+		halfsade_captives_pass_two_effect = { A = 2 B = 3 }
+	}
+
+	option = {
+		name = halfsade_captives.0008.b
+		trigger = { short_term_gold >= halfsade_captives_price_1 }
+		show_as_unavailable = { always = yes }
+		halfsade_captives_pay_effect = { COUNT = 1 }
+		halfsade_captives_welcome_effect = { SLOT = 2 }
+		halfsade_captives_pass_two_effect = { A = 1 B = 3 }
+	}
+
+	option = {
+		name = halfsade_captives.0008.c
+		trigger = { short_term_gold >= halfsade_captives_price_1 }
+		show_as_unavailable = { always = yes }
+		halfsade_captives_pay_effect = { COUNT = 1 }
+		halfsade_captives_welcome_effect = { SLOT = 3 }
+		halfsade_captives_pass_two_effect = { A = 1 B = 2 }
+	}
+
+	option = {
+		name = halfsade_captives.0008.d
+		trigger_event = halfsade_captives.0003
+	}
+}
+
+halfsade_captives.0004 = {
+	type = character_event
+	title = halfsade_captives.0004.t
+	desc = halfsade_captives.0004.desc
+	theme = prison
+
+	left_portrait = {
+		character = scope:halfsade_captive_1
+		animation = prisonhouse
+	}
+	right_portrait = {
+		character = scope:halfsade_captive_2
+		animation = prisonhouse
+	}
+
+	immediate = {
+		var:halfsade_captives_left_1 = { save_scope_as = halfsade_captive_1 }
+		var:halfsade_captives_left_2 = { save_scope_as = halfsade_captive_2 }
+	}
+
+	option = {
+		name = halfsade_captives.0004.a
+		trigger = { short_term_gold >= halfsade_captives_price_2 }
+		show_as_unavailable = { always = yes }
+		halfsade_captives_pay_effect = { COUNT = 2 }
+		halfsade_captives_welcome_effect = { SLOT = 1 }
+		halfsade_captives_welcome_effect = { SLOT = 2 }
+		halfsade_captives_cleanup_effect = yes
+	}
+
+	option = {
+		name = halfsade_captives.0004.b
+		trigger_event = halfsade_captives.0009
+	}
+
+	option = {
+		name = halfsade_captives.0004.c
+		trigger_event = halfsade_captives.0010
+	}
+
+	option = {
+		name = halfsade_captives.0004.d
+		trigger = { short_term_gold >= halfsade_captives_price_2 }
+		show_as_unavailable = { always = yes }
+		halfsade_captives_pay_effect = { COUNT = 2 }
+		custom_tooltip = halfsade_captives.release_tt
+		halfsade_captives_release_effect = { SLOT = 1 }
+		halfsade_captives_release_effect = { SLOT = 2 }
+		halfsade_captives_cleanup_effect = yes
+	}
+
+	option = {
+		name = halfsade_captives.0004.e
+		halfsade_captives_send_home_effect = { SLOT = 1 }
+		halfsade_captives_send_home_effect = { SLOT = 2 }
+		halfsade_captives_cleanup_effect = yes
+	}
+}
+
+halfsade_captives.0009 = {
+	type = character_event
+	title = halfsade_captives.0009.t
+	desc = halfsade_captives.0009.desc
+	theme = prison
+
+	left_portrait = {
+		character = scope:halfsade_captive_1
+		animation = prisonhouse
+	}
+	right_portrait = {
+		character = scope:halfsade_captive_2
+		animation = prisonhouse
+	}
+
+	immediate = {
+		var:halfsade_captives_left_1 = { save_scope_as = halfsade_captive_1 }
+		var:halfsade_captives_left_2 = { save_scope_as = halfsade_captive_2 }
+	}
+
+	option = {
+		name = halfsade_captives.0009.a
+		trigger = { short_term_gold >= halfsade_captives_price_1 }
+		show_as_unavailable = { always = yes }
+		halfsade_captives_pay_effect = { COUNT = 1 }
+		halfsade_captives_welcome_effect = { SLOT = 1 }
+		halfsade_captives_pass_one_effect = { A = 2 }
+	}
+
+	option = {
+		name = halfsade_captives.0009.b
+		trigger = { short_term_gold >= halfsade_captives_price_1 }
+		show_as_unavailable = { always = yes }
+		halfsade_captives_pay_effect = { COUNT = 1 }
+		halfsade_captives_welcome_effect = { SLOT = 2 }
+		halfsade_captives_pass_one_effect = { A = 1 }
+	}
+
+	option = {
+		name = halfsade_captives.0009.c
+		trigger_event = halfsade_captives.0004
+	}
+}
+
+halfsade_captives.0010 = {
+	type = character_event
+	title = halfsade_captives.0010.t
+	desc = halfsade_captives.0010.cesc
+	theme = prison
+
+	left_portrait = {
+		character = scope:halfsade_captive_1
+		animation = prisonhouse
+	}
+	right_portrait = {
+		character = scope:halfsade_captive_2
+		animation = prisonhouse
+	}
+
+	immediate = {
+		var:halfsade_captives_left_1 = { save_scope_as = halfsade_captive_1 }
+		var:halfsade_captives_left_2 = { save_scope_as = halfsade_captive_2 }
+	}
+
+	option = {
+		name = halfsade_captives.0010.a
+		trigger = { short_term_gold >= halfsade_captives_price_1 }
+		show_as_unavailable = { always = yes }
+		halfsade_captives_pay_effect = { COUNT = 1 }
+		custom_tooltip = halfsade_captives.release_tt
+		halfsade_captives_release_effect = { SLOT = 1 }
+		halfsade_captives_pass_one_effect = { A = 2 }
+	}
+
+	option = {
+		name = halfsade_captives.0010.b
+		trigger = { short_term_gold >= halfsade_captives_price_1 }
+		show_as_unavailable = { always = yes }
+		halfsade_captives_pay_effect = { COUNT = 1 }
+		custom_tooltip = halfsade_captives.release_tt
+		halfsade_captives_release_effect = { SLOT = 2 }
+		halfsade_captives_pass_one_effect = { A = 1 }
+	}
+
+	option = {
+		name = halfsade_captives.0010.c
+		trigger_event = halfsade_captives.0004
+	}
+}
+
+halfsade_captives.0005 = {
+	type = character_event
+	title = halfsade_captives.0005.t
+	desc = halfsade_captives.0005.desc
+	theme = prison
+
+	lower_center_portrait = {
+		character = scope:halfsade_captive_1
+		animation = prisonhouse
+	}
+
+	immediate = {
+		var:halfsade_captives_left_1 = { save_scope_as = halfsade_captive_1 }
+	}
+
+	option = {
+		name = halfsade_captives.0005.a
+		trigger = { short_term_gold >= halfsade_captives_price_1 }
+		show_as_unavailable = { always = yes }
+		halfsade_captives_pay_effect = { COUNT = 1 }
+		halfsade_captives_welcome_effect = { SLOT = 1 }
+		halfsade_captives_cleanup_effect = yes
+	}
+
+	option = {
+		name = halfsade_captives.0005.b
+		halfsade_captives_send_home_effect = { SLOT = 1 }
+		halfsade_captives_cleanup_effect = yes
+	}
+
+	option = {
+		name = halfsade_captives.0005.c
+		trigger = { short_term_gold >= halfsade_captives_price_1 }
+		show_as_unavailable = { always = yes }
+		halfsade_captives_pay_effect = { COUNT = 1 }
+		custom_tooltip = halfsade_captives.release_tt
+		halfsade_captives_release_effect = { SLOT = 1 }
+		halfsade_captives_cleanup_effect = yes
+	}
+}
+
+halfsade_captives.0006 = {
+	type = character_event
+	hidden = yes
+
+	trigger = {
+		has_character_modifier = halfsade_captives_freed_modifier
+		is_ruler = no
+		exists = court_owner
+	}
+
+	immediate = {
+		court_owner = { save_scope_as = halfsade_host }
+		if = {
+			limit = { halfsade_captives_stays_trigger = yes }
+			remove_character_modifier = halfsade_captives_freed_modifier
+		}
+		else = {
+			add_character_flag = halfsade_captives_leaving_pending
+			scope:halfsade_host = { trigger_event = halfsade_captives.0007 }
+		}
+	}
+}
+
+# captives leaving
+halfsade_captives.0007 = {
+	type = character_event
+	title = halfsade_captives.0007.t
+	desc = halfsade_captives.0007.desc
+	theme = diplomacy
+
+	trigger = {
+		any_courtier = { has_character_flag = halfsade_captives_leaving_pending }
+	}
+
+	left_portrait = {
+		character = scope:halfsade_leaver
+		animation = idle
+	}
+
+	immediate = {
+		random_courtier = {
+			limit = { has_character_flag = halfsade_captives_leaving_pending }
+			save_scope_as = halfsade_leaver
+			remove_character_flag = halfsade_captives_leaving_pending
+		}
+	}
+
+	option = {
+		name = halfsade_captives.0007.a
+		scope:halfsade_leaver = {
+			remove_character_modifier = halfsade_captives_freed_modifier
+			move_to_pool = yes
+		}
+	}
+
+	option = {
+		name = halfsade_captives.0007.b
+		trigger = { short_term_gold >= halfsade_captives_price_1 }
+		show_as_unavailable = { always = yes }
+		halfsade_captives_pay_effect = { COUNT = 1 }
+		scope:halfsade_leaver = {
+			remove_character_modifier = halfsade_captives_freed_modifier
+		}
+	}
+}
+
+halfsade_captives.0011 = {
+	type = character_event
+	hidden = yes
+
+	trigger = {
+		has_variable = halfsade_captives_keeper
+		var:halfsade_captives_keeper = { is_alive = yes }
+	}
+
+	immediate = {
+		var:halfsade_captives_keeper = { save_scope_as = halfsade_keeper }
+		if = {
+			limit = {
+				NOT = { is_courtier_of = scope:halfsade_keeper }
+				is_imprisoned = no
+				is_ruler = no
+				is_married = no
+			}
+			scope:halfsade_keeper = { add_courtier = root }
+		}
+		trigger_event = {
+			id = halfsade_captives.0011
+			days = 90
+		}
 	}
 }

@@ -49,6 +49,12 @@ halfsade_captives_spawn_captive_effect = {
 	}
 
 	scope:halfsade_captive_$SLOT$ = {
+		hidden_effect = {
+			remove_trait = devoted
+		}
+	}
+
+	scope:halfsade_captive_$SLOT$ = {
 		halfsade_captives_slim_effect = yes
 	}
 
@@ -90,6 +96,36 @@ halfsade_captives_welcome_effect = {
 		add_character_modifier = {
 			modifier = halfsade_captives_fine_lineage_modifier
 		}
+		# captives collar
+		set_variable = { name = halfsade_captives_keeper value = root }
+		trigger_event = {
+			id = halfsade_captives.0011
+			days = 90
+		}
+	}
+	add_character_modifier = {
+		modifier = halfsade_captives_exotic_taste_modifier
+		years = 2
+	}
+}
+
+halfsade_captives_pay_effect = {
+	remove_short_term_gold = halfsade_captives_price_$COUNT$
+}
+
+halfsade_captives_release_effect = {
+	add_courtier = scope:halfsade_captive_$SLOT$
+	scope:halfsade_captive_$SLOT$ = {
+		add_character_modifier = {
+			modifier = halfsade_captives_freed_modifier
+		}
+		add_character_modifier = {
+			modifier = halfsade_captives_fine_lineage_modifier
+		}
+		trigger_event = {
+			id = halfsade_captives.0006
+			days = 365
+		}
 	}
 	add_character_modifier = {
 		modifier = halfsade_captives_exotic_taste_modifier
@@ -103,4 +139,22 @@ halfsade_captives_send_home_effect = {
 			death_reason = death_vanished
 		}
 	}
+}
+
+halfsade_captives_pass_two_effect = {
+	set_variable = { name = halfsade_captives_left_1 value = scope:halfsade_captive_$A$ }
+	set_variable = { name = halfsade_captives_left_2 value = scope:halfsade_captive_$B$ }
+	trigger_event = halfsade_captives.0004
+}
+
+halfsade_captives_pass_one_effect = {
+	set_variable = { name = halfsade_captives_left_1 value = scope:halfsade_captive_$A$ }
+	trigger_event = halfsade_captives.0005
+}
+
+halfsade_captives_cleanup_effect = {
+	remove_variable = halfsade_captives_travel_days
+	remove_variable = halfsade_captives_left_1
+	remove_variable = halfsade_captives_left_2
+	remove_variable = halfsade_captives_left_3
 }

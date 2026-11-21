@@ -19,3 +19,9 @@ halfsade_captives_fine_lineage_modifier = {
 	positive_random_genetic_chance = 0.1
 	genetic_trait_strengthen_chance = 0.1
 }
+
+# captive modifier - freed
+halfsade_captives_freed_modifier = {
+	icon = hostage_positive
+	general_opinion = 10
+}
